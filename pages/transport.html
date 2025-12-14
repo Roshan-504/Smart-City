@@ -3,21 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Public Transport - Smart City Guide</title>
-    <meta name="description" content="Bus routes, metro lines, fares, and transport guidelines for citizens and tourists.">
+    <title>Public Transport - NYC City Guide</title>
+    <meta name="description" content="NYC Subway, Bus routes, Ferry schedules, and MTA fare information.">
     <link rel="stylesheet" href="../index.css">
     <link rel="stylesheet" href="../css/transport.css">
 </head>
 <body>
     <header class="header">
         <div class="container header-container">
-            <h1 class="logo">Smart City Guide</h1>
-            <button class="hamburger" aria-label="Open navigation menu" aria-expanded="false">
-                <span></span>
-                <span></span>
-                <span></span>
+            <h1 class="logo">NYC City Guide</h1>
+            <button class="hamburger" aria-label="Open navigation menu">
+                <span></span><span></span><span></span>
             </button>
-            <nav class="nav" aria-label="Main navigation">
+            <nav class="nav">
                 <ul class="nav-list">
                     <li><a href="../index.html" class="nav-link">Home</a></li>
                     <li><a href="emergency.html" class="nav-link">Emergency</a></li>
@@ -27,7 +25,7 @@
                     <li><a href="map.html" class="nav-link">City Map</a></li>
                     <li><a href="tourist.html" class="nav-link">Tourist Spots</a></li>
                     <li><a href="safety.html" class="nav-link">Safety Tips</a></li>
-                    <li><a href="events.html" class="nav-link">Events</a></li>
+                    <li><a href="events.html" class="nav-link ">Events</a></li>
                     <li><a href="feedback.html" class="nav-link">Feedback</a></li>
                 </ul>
             </nav>
@@ -37,21 +35,21 @@
     <main class="main-content">
         <section class="transport-hero">
             <div class="container">
-                <h2 class="page-title">Public Transport</h2>
-                <p class="page-subtitle">Find routes, fares, and schedules easily</p>
+                <h2 class="page-title">Getting Around NYC</h2>
+                <p class="page-subtitle">Subway lines, Bus routes, and Ferry schedules</p>
             </div>
         </section>
 
         <section class="transport-controls">
             <div class="container">
-                <div class="search-filter">
-                    <input type="text" id="search-input" placeholder="Search route or stop name..." aria-label="Search routes">
+                <div class="search-filter-wrapper">
+                    <input type="text" id="search-input" placeholder="Search route (e.g., A Train, M60)..." aria-label="Search routes">
                     <select id="type-filter" aria-label="Filter by transport type">
-                        <option value="all">All Types</option>
+                        <option value="all">All Modes</option>
+                        <option value="subway">Subway</option>
                         <option value="bus">Bus</option>
-                        <option value="metro">Metro</option>
-                        <option value="train">Local Train</option>
-                        <option value="auto">Auto/Taxi</option>
+                        <option value="rail">LIRR / Rail</option>
+                        <option value="ferry">NYC Ferry</option>
                     </select>
                 </div>
             </div>
@@ -60,15 +58,14 @@
         <section class="routes-list">
             <div class="container">
                 <div id="routes-container" class="cards-grid">
-                    <!-- Routes will be dynamically inserted by JS -->
-                </div>
+                    </div>
             </div>
         </section>
     </main>
 
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2025 Smart City Guide. All rights reserved.</p>
+            <p>&copy; 2025 NYC City Guide. Built for Citizens & Tourists.</p>
         </div>
     </footer>
 

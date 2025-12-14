@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Emergency Services - Smart City Guide</title>
-    <meta name="description" content="Quick access to emergency contacts: Police, Ambulance, Fire Brigade and more.">
+    <title>Emergency Services - NYC City Guide</title>
+    <meta name="description" content="Quick access to New York City emergency and non-emergency services.">
     <link rel="stylesheet" href="../css/emergency.css">
     <link rel="stylesheet" href="../index.css">
 </head>
 <body>
     <header class="header">
         <div class="container header-container">
-            <h1 class="logo">Smart City Guide</h1>
+            <h1 class="logo">NYC City Guide</h1>
             <button class="hamburger" aria-label="Open navigation menu" aria-expanded="false">
                 <span></span>
                 <span></span>
@@ -37,8 +37,8 @@
     <main class="main-content">
         <section class="emergency-hero">
             <div class="container">
-                <h2 class="page-title">Emergency Services</h2>
-                <p class="page-subtitle">Tap to call instantly in case of emergency</p>
+                <h2 class="page-title">NYC Emergency Services</h2>
+                <p class="page-subtitle">Tap to call instantly in case of an emergency</p>
             </div>
         </section>
 
@@ -46,64 +46,59 @@
             <div class="container">
                 <div class="accordion">
 
+                    <!-- 911 Emergency -->
                     <button class="accordion-btn" aria-expanded="false">
-                        <span class="icon">👮</span>
-                        <span>Police</span>
-                        <span class="number">100</span>
+                        <span class="icon">🚨</span>
+                        <span>Police / Fire / Ambulance</span>
+                        <span class="number">911</span>
                     </button>
                     <div class="accordion-panel">
-                        <p>General police emergency and crime reporting.</p>
-                        <a href="tel:100" class="call-button">📞 Call 100 Now</a>
+                        <p>Use 911 for all life-threatening emergencies in New York City.</p>
+                        <a href="tel:911" class="call-button">📞 Call 911 Now</a>
                     </div>
 
+                    <!-- NYC 311 -->
                     <button class="accordion-btn" aria-expanded="false">
-                        <span class="icon">🚑</span>
-                        <span>Ambulance</span>
-                        <span class="number">108</span>
+                        <span class="icon">🏙️</span>
+                        <span>NYC 311 (Non-Emergency)</span>
+                        <span class="number">311</span>
                     </button>
                     <div class="accordion-panel">
-                        <p>Medical emergencies and accident response.</p>
-                        <a href="tel:108" class="call-button">📞 Call 108 Now</a>
+                        <p>City services, complaints, noise issues, lost property, and general help.</p>
+                        <a href="tel:311" class="call-button">📞 Call 311</a>
                     </div>
 
+                    <!-- Poison Control -->
                     <button class="accordion-btn" aria-expanded="false">
-                        <span class="icon">🚒</span>
-                        <span>Fire Brigade</span>
-                        <span class="number">101</span>
+                        <span class="icon">☠️</span>
+                        <span>Poison Control</span>
+                        <span class="number">1-800-222-1222</span>
                     </button>
                     <div class="accordion-panel">
-                        <p>Fire emergencies and rescue operations.</p>
-                        <a href="tel:101" class="call-button">📞 Call 101 Now</a>
+                        <p>Immediate help for poisoning or overdose emergencies.</p>
+                        <a href="tel:18002221222" class="call-button">📞 Call Poison Control</a>
                     </div>
 
+                    <!-- Mental Health Crisis -->
                     <button class="accordion-btn" aria-expanded="false">
-                        <span class="icon">👩‍⚖️</span>
-                        <span>Women Helpline</span>
-                        <span class="number">1091</span>
+                        <span class="icon">🧠</span>
+                        <span>Mental Health Crisis Line</span>
+                        <span class="number">988</span>
                     </button>
                     <div class="accordion-panel">
-                        <p>Support for women in distress.</p>
-                        <a href="tel:1091" class="call-button">📞 Call 1091 Now</a>
+                        <p>24/7 Suicide & Crisis Lifeline for mental health emergencies.</p>
+                        <a href="tel:988" class="call-button">📞 Call 988</a>
                     </div>
 
+                    <!-- NYC Tourism -->
                     <button class="accordion-btn" aria-expanded="false">
-                        <span class="icon">🌍</span>
-                        <span>Tourist Helpline</span>
-                        <span class="number">1800-11-1363</span>
+                        <span class="icon">🗽</span>
+                        <span>NYC Tourist Help</span>
+                        <span class="number">311</span>
                     </button>
                     <div class="accordion-panel">
-                        <p>Assistance for tourists (lost, safety concerns, etc.).</p>
-                        <a href="tel:1800111363" class="call-button">📞 Call Now</a>
-                    </div>
-
-                    <button class="accordion-btn" aria-expanded="false">
-                        <span class="icon">⚠️</span>
-                        <span>Disaster Management</span>
-                        <span class="number">1077</span>
-                    </button>
-                    <div class="accordion-panel">
-                        <p>Natural disasters and large-scale emergencies.</p>
-                        <a href="tel:1077" class="call-button">📞 Call 1077 Now</a>
+                        <p>Tourist assistance, directions, lost items, and city information.</p>
+                        <a href="tel:311" class="call-button">📞 Call 311</a>
                     </div>
 
                 </div>
@@ -113,7 +108,7 @@
 
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2025 Smart City Guide. All rights reserved.</p>
+            <p>&copy; 2025 NYC City Guide. All rights reserved.</p>
         </div>
     </footer>
 

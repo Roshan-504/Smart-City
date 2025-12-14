@@ -1,114 +1,119 @@
+/* css/transport.css */
 
 .transport-hero {
-    background: linear-gradient(135deg, #28a745, #218838);
+    background: linear-gradient(135deg, #0039a6, #002b7f); /* MTA Blue */
     color: white;
     text-align: center;
     padding: 3rem 0;
 }
 
 .page-title {
-    font-size: 2.4rem;
+    font-size: 2.5rem;
     margin-bottom: 0.5rem;
 }
 
 .page-subtitle {
     font-size: 1.2rem;
-    opacity: 0.95;
+    opacity: 0.9;
 }
 
+/* Search & Filter Styling */
 .transport-controls {
-    padding: 1.5rem 0;
     background-color: #f1f1f1;
+    padding: 1.5rem 0;
+    border-bottom: 1px solid #ddd;
 }
 
-.search-filter {
+.search-filter-wrapper {
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
     gap: 1rem;
+    justify-content: center;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 #search-input {
-    padding: 0.9rem 1rem;
-    font-size: 1.1rem;
+    flex: 1;
+    min-width: 280px;
+    padding: 12px 15px;
     border: 1px solid #ccc;
     border-radius: 8px;
+    font-size: 1rem;
 }
 
 #type-filter {
-    padding: 0.9rem 1rem;
-    font-size: 1.1rem;
+    padding: 12px 20px;
     border: 1px solid #ccc;
     border-radius: 8px;
+    font-size: 1rem;
     background-color: white;
+    min-width: 150px;
 }
 
+/* Routes Grid */
 .routes-list {
-    padding: 2rem 0;
+    padding: 2rem 0 4rem;
 }
 
+/* Card Styling */
 .route-card {
     background: white;
-    border-radius: 12px;
     padding: 1.5rem;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s, box-shadow 0.2s;
+    border: 1px solid #eee;
+    position: relative;
+    overflow: hidden;
 }
 
 .route-card:hover {
     transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.12);
 }
-
-.route-card .type-badge {
-    display: inline-block;
-    padding: 0.4rem 0.8rem;
-    border-radius: 20px;
-    font-size: 0.9rem;
-    font-weight: bold;
-    color: white;
-    margin-bottom: 0.8rem;
-}
-
-.type-badge.bus { background-color: #dc3545; }
-.type-badge.metro { background-color: #007bff; }
-.type-badge.train { background-color: #6f42c1; }
-.type-badge.auto { background-color: #fd7e14; }
 
 .route-card h3 {
-    margin: 0.5rem 0;
+    margin: 0.8rem 0 0.5rem;
+    font-size: 1.4rem;
     color: #333;
 }
 
-.route-card .route-path {
+.route-path {
     color: #666;
-    font-size: 1rem;
-    margin-bottom: 0.8rem;
+    font-size: 0.95rem;
+    margin-bottom: 1rem;
+    line-height: 1.4;
 }
 
-.route-card .fare {
+.fare {
+    font-weight: 600;
+    color: #0039a6;
+    background-color: #e3f2fd;
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+/* Transport Type Badges (Styled like MTA bullets) */
+.type-badge {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 50px;
+    font-size: 0.8rem;
     font-weight: bold;
-    color: #28a745;
+    text-transform: uppercase;
+    color: white;
 }
 
+.type-badge.subway { background-color: #f39c12; } /* Orange/Yellowish */
+.type-badge.bus { background-color: #0039a6; }    /* MTA Blue */
+.type-badge.rail { background-color: #c0392b; }   /* LIRR Red */
+.type-badge.ferry { background-color: #16a085; }  /* Teal */
+
+/* Tablet & Desktop Tweaks */
 @media (min-width: 768px) {
-    .search-filter {
-        flex-direction: row;
-    }
-
-    #search-input {
-        flex: 1;
-    }
-
-    .page-title {
-        font-size: 2.8rem;
-    }
-
-    .cards-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (min-width: 1024px) {
-    .cards-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
+    .page-title { font-size: 3rem; }
+    .search-filter-wrapper { flex-wrap: nowrap; }
 }

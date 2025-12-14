@@ -132,16 +132,14 @@ ul {
 .nav-link.active {
     background-color: var(--primary-light);
     color: var(--primary);
-    padding-left: 2rem; /* Slide effect */
+    padding-left: 2rem; 
 }
 
-/* --- 3. Hero Section --- */
 .main-content {
     flex: 1;
 }
 
 .hero {
-    /* Modern Gradient */
     background: linear-gradient(135deg, #0056b3, #007bff);
     color: var(--white);
     padding: 4rem 0 5rem;
@@ -161,7 +159,6 @@ ul {
     margin-bottom: 1.5rem;
 }
 
-/* Search Bar (Optional if you added HTML for it) */
 .search-wrapper {
     max-width: 500px;
     margin: 1.5rem auto 0;
@@ -196,7 +193,6 @@ ul {
     background-color: var(--primary-hover);
 }
 
-/* --- 4. Section Titles & Grids --- */
 .section-title {
     font-size: 1.8rem;
     margin: 2rem 0 1.5rem;
@@ -207,7 +203,6 @@ ul {
     display: inline-block;
 }
 
-/* Center alignment wrapper for title underline */
 .title-wrapper { text-align: center; }
 
 .cards-grid {
@@ -217,7 +212,6 @@ ul {
     padding-bottom: 2rem;
 }
 
-/* --- 5. Action Cards (Dashboard) --- */
 .action-card {
     background: var(--white);
     border-radius: var(--radius);
@@ -240,7 +234,6 @@ ul {
     border-color: var(--primary-light);
 }
 
-/* Icon Styles */
 .action-card .icon {
     font-size: 3rem;
     display: block;
@@ -248,7 +241,6 @@ ul {
     transition: transform 0.3s;
 }
 
-/* Icon Bubble Style (If using the enhanced HTML) */
 .icon-bubble {
     font-size: 2rem;
     background-color: #f0f4ff;
@@ -277,7 +269,6 @@ ul {
     margin-top: 5px;
 }
 
-/* --- 6. Highlights & Footer --- */
 .highlight-card {
     background: var(--white);
     border-radius: var(--radius);
@@ -293,9 +284,7 @@ ul {
     margin-top: auto;
 }
 
-/* --- 7. Media Queries --- */
 
-/* Desktop Navigation (Min-width: 1024px) */
 @media (min-width: 1024px) {
     .hamburger {
         display: none;
@@ -316,7 +305,6 @@ ul {
         gap: 0.5rem;
     }
 
-    /* Desktop Pill Buttons */
     .nav-link {
         padding: 0.5rem 0.6rem;
         border-radius: 50px;
@@ -329,11 +317,10 @@ ul {
     .nav-link.active {
         background-color: var(--primary-light);
         color: var(--primary);
-        padding-left: 1rem; /* Reset mobile slide */
+        padding-left: 1rem; 
         transform: translateY(-2px);
     }
 
-    /* Grid Adjustments */
     .cards-grid {
         grid-template-columns: repeat(4, 1fr);
     }
@@ -343,10 +330,9 @@ ul {
     }
 }
 
-/* Tablet Adjustments (768px - 1023px) */
 @media (min-width: 768px) and (max-width: 1023px) {
     .hamburger {
-        display: flex; /* Keep hamburger on tablet for space */
+        display: flex; 
     }
     .cards-grid {
         grid-template-columns: repeat(2, 1fr);

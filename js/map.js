@@ -1,40 +1,39 @@
 document.addEventListener('DOMContentLoaded', () => {
+
     const locations = [
-        { name: "Central Hospital", category: "hospital", top: 30, left: 45, icon: "🏥" },
-        { name: "City General Hospital", category: "hospital", top: 65, left: 20, icon: "🏥" },
-        { name: "Main Police Station", category: "police", top: 40, left: 70, icon: "👮" },
-        { name: "North Police Station", category: "police", top: 15, left: 30, icon: "👮" },
-        { name: "Historic Fort", category: "tourist", top: 50, left: 60, icon: "🏰" },
-        { name: "Central Beach", category: "tourist", top: 80, left: 75, icon: "🏖️" },
-        { name: "Municipal Corporation", category: "government", top: 35, left: 55, icon: "🏛️" },
-        { name: "RTO Office", category: "government", top: 70, left: 50, icon: "🏢" },
-        { name: "Central Bus Station", category: "transport", top: 55, left: 35, icon: "🚌" },
-        { name: "Main Railway Station", category: "transport", top: 25, left: 80, icon: "🚉" }
+        { name: "NYU Langone Health", category: "hospital", top: 32, left: 48, icon: "🏥" },
+        { name: "Mount Sinai Hospital", category: "hospital", top: 58, left: 22, icon: "🏥" },
+
+        { name: "NYPD Midtown South Precinct", category: "police", top: 42, left: 70, icon: "👮" },
+        { name: "NYPD Harlem Precinct", category: "police", top: 18, left: 34, icon: "👮" },
+
+        { name: "Statue of Liberty", category: "tourist", top: 75, left: 80, icon: "🗽" },
+        { name: "Central Park", category: "tourist", top: 28, left: 60, icon: "🌳" },
+
+        { name: "NYC City Hall", category: "government", top: 36, left: 54, icon: "🏛️" },
+        { name: "NYC 311 Service Center", category: "government", top: 62, left: 52, icon: "🏢" },
+
+        { name: "Grand Central Terminal", category: "transport", top: 48, left: 38, icon: "🚇" },
+        { name: "Staten Island Ferry Terminal", category: "transport", top: 82, left: 68, icon: "⛴️" }
     ];
 
-    const markersContainer = document.getElementById('markers-container');
     const locationsList = document.getElementById('locations-list');
     const filterButtons = document.querySelectorAll('.filter-btn');
 
     function renderMarkers(filter = 'all') {
-        markersContainer.innerHTML = '';
         locationsList.innerHTML = '';
 
-        const filtered = filter === 'all' 
-            ? locations 
+        const filtered = filter === 'all'
+            ? locations
             : locations.filter(loc => loc.category === filter);
 
         filtered.forEach(loc => {
-            const marker = document.createElement('div');
-            marker.className = `marker ${loc.category}`;
-            marker.style.top = `${loc.top}%`;
-            marker.style.left = `${loc.left}%`;
-            marker.innerHTML = `<span style="transform: rotate(45deg);">${loc.icon}</span>`;
-            marker.title = loc.name;
-            markersContainer.appendChild(marker);
 
             const li = document.createElement('li');
-            li.innerHTML = `<span class="location-icon">${loc.icon}</span> ${loc.name}`;
+            li.innerHTML = `
+                <span class="location-icon">${loc.icon}</span>
+                ${loc.name}
+            `;
             locationsList.appendChild(li);
         });
     }

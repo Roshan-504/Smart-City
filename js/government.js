@@ -1,54 +1,75 @@
-
 document.addEventListener('DOMContentLoaded', () => {
     const servicesData = [
         {
-            title: 'Municipal Corporation Office',
-            icon: '🏛️',
-            info: '<strong>Address:</strong> Civic Center, Main Road<br><strong>Phone:</strong> <a href="tel:1800-123-4567">1800-123-4567</a><br><strong>Services:</strong> Birth/Death certificates, property tax, water connection, complaints',
-            link: 'https://example-municipal.gov.in',
-            linkText: 'Official Website →'
+            title: 'NYC 311 – City Services',
+            icon: '🏙️',
+            info: `
+                <strong>Purpose:</strong> Non-emergency city services and information<br>
+                <strong>Examples:</strong> Noise complaints, sanitation, parking issues, lost property<br>
+                <strong>Phone:</strong> <a href="tel:311">311</a>
+            `,
+            link: 'https://www.nyc.gov/311',
+            linkText: 'NYC 311 Official Website →'
         },
         {
-            title: 'Regional Transport Office (RTO)',
+            title: 'New York State DMV',
             icon: '🚗',
-            info: '<strong>Services:</strong> Driving license, vehicle registration, permits, fitness certificate<br><strong>Online Portal:</strong> Available for most services',
-            link: 'https://parivahan.gov.in',
-            linkText: 'Parivahan Portal →'
+            info: `
+                <strong>Services:</strong> Driver license, learner permit, vehicle registration, state ID<br>
+                <strong>Appointments:</strong> Required for most in-person services
+            `,
+            link: 'https://dmv.ny.gov',
+            linkText: 'NY State DMV Portal →'
         },
         {
-            title: 'Aadhaar Services',
+            title: 'Social Security Administration (SSA)',
             icon: '🆔',
-            info: '<strong>Enrolment & Update Centers:</strong> Available at banks, post offices, and municipal offices<br><strong>Book Appointment:</strong> Online slot booking recommended',
-            link: 'https://uidai.gov.in',
-            linkText: 'UIDAI Website →'
+            info: `
+                <strong>Services:</strong> Social Security Number (SSN), benefits, replacement cards<br>
+                <strong>Eligibility:</strong> U.S. citizens and authorized residents
+            `,
+            link: 'https://www.ssa.gov',
+            linkText: 'SSA Official Website →'
         },
         {
-            title: 'PAN Card Services',
-            icon: '💳',
-            info: '<strong>Apply or Correct PAN:</strong> Online application and tracking<br><strong>Agencies:</strong> NSDL & UTIITSL',
-            link: 'https://www.incometax.gov.in',
-            linkText: 'Income Tax Portal →'
+            title: 'IRS – Federal Tax Services',
+            icon: '💰',
+            info: `
+                <strong>Services:</strong> Federal tax filing, refunds, payment plans<br>
+                <strong>Online:</strong> IRS account access available
+            `,
+            link: 'https://www.irs.gov',
+            linkText: 'IRS Website →'
         },
         {
-            title: 'Passport Seva',
+            title: 'USCIS – Immigration Services',
             icon: '🛂',
-            info: '<strong>Passport Office Location:</strong> Central Business District<br><strong>Apply Online:</strong> Mandatory for new/renewal',
-            link: 'https://passportindia.gov.in',
-            linkText: 'Passport Seva →'
+            info: `
+                <strong>Services:</strong> Visa status, Green Card, citizenship, work authorization<br>
+                <strong>Application:</strong> Online filing supported
+            `,
+            link: 'https://www.uscis.gov',
+            linkText: 'USCIS Portal →'
         },
         {
-            title: 'Voter ID Services',
-            icon: '🗳️',
-            info: '<strong>Register or Update Voter ID:</strong> Through NVSP portal<br><strong>Helpline:</strong> 1950',
-            link: 'https://voters.eci.gov.in',
-            linkText: 'Voters Portal →'
+            title: 'NYC Housing & Development',
+            icon: '🏠',
+            info: `
+                <strong>Services:</strong> Public housing, housing assistance, tenant rights<br>
+                <strong>Programs:</strong> NYCHA, affordable housing listings
+            `,
+            link: 'https://www.nyc.gov/site/housing',
+            linkText: 'NYC Housing Services →'
         },
         {
-            title: 'Public Grievance & Complaints',
+            title: 'Public Complaints & Grievances',
             icon: '📝',
-            info: '<strong>PG Portal:</strong> Register complaints for any government department<br><strong>Local Helpline:</strong> 1800-123-4567',
-            link: 'https://pgportal.gov.in',
-            linkText: 'PG Portal →'
+            info: `
+                <strong>Report:</strong> City service issues, corruption, misconduct<br>
+                <strong>Helpline:</strong> <a href="tel:311">311</a>
+            `,
+            link: 'https://www.nyc.gov/site/doi',
+            linkText: 'NYC Department of Investigation →'
         }
     ];
 
@@ -67,13 +88,14 @@ document.addEventListener('DOMContentLoaded', () => {
         panel.className = 'accordion-panel';
         panel.innerHTML = `
             <div class="service-info">${service.info}</div>
-            <a href="${service.link}" target="_blank" class="external-link">${service.linkText}</a>
+            <a href="${service.link}" target="_blank" class="external-link">
+                ${service.linkText}
+            </a>
         `;
 
-        // Click to toggle
         button.addEventListener('click', () => {
-            const isExpanded = button.getAttribute('aria-expanded') === 'true';
-            button.setAttribute('aria-expanded', !isExpanded);
+            const expanded = button.getAttribute('aria-expanded') === 'true';
+            button.setAttribute('aria-expanded', !expanded);
             panel.classList.toggle('active');
         });
 

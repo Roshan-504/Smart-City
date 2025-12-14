@@ -1,52 +1,52 @@
 document.addEventListener('DOMContentLoaded', () => {
     const spotsData = [
         {
-            name: "Historic Fort",
-            image: "../images/fort.jpg",
-            description: "A magnificent 17th-century fort overlooking the sea with stunning architecture and rich history.",
-            timings: "9:00 AM - 6:00 PM",
-            entry: "₹50 (Indians), ₹500 (Foreigners)",
-            extra: "Guided tours available. Best visited during sunset for panoramic views."
+            name: "Statue of Liberty",
+            image: "../images/liberty.webp",
+            description: "One of the most iconic symbols of the United States, offering stunning views of New York Harbor.",
+            timings: "9:00 AM – 5:00 PM",
+            entry: "$24 (Adults), $12 (Children)",
+            extra: "Ferry tickets include access to Liberty Island and Ellis Island. Advance booking recommended."
         },
         {
-            name: "City Museum",
-            image: "../images/museum.webp",
-            description: "Home to ancient artifacts, art collections, and interactive exhibits showcasing the region's heritage.",
-            timings: "10:00 AM - 5:00 PM (Closed Mondays)",
-            entry: "₹20 (Adults), Free for children",
-            extra: "Audio guides in multiple languages. Photography allowed without flash."
+            name: "Central Park",
+            image: "../images/central-park.jpg",
+            description: "A massive urban park in the heart of Manhattan featuring walking trails, lakes, and cultural landmarks.",
+            timings: "6:00 AM – 1:00 AM",
+            entry: "Free",
+            extra: "Popular attractions include Bethesda Terrace, Bow Bridge, and Central Park Zoo."
         },
         {
-            name: "Central Beach",
-            image: "../images/beach.jpg",
-            description: "Pristine golden sands with calm waters, perfect for relaxation and water sports.",
+            name: "Times Square",
+            image: "../images/times-square.jpg",
+            description: "World-famous entertainment district known for bright billboards, theaters, and city energy.",
             timings: "Open 24 hours",
             entry: "Free",
-            extra: "Water sports available. Lifeguards on duty from 8 AM to 6 PM."
+            extra: "Best visited at night. Hosts the annual New Year’s Eve Ball Drop."
         },
         {
-            name: "Botanical Gardens",
-            image: "../images/garden.jpg",
-            description: "Lush green gardens with rare plants, butterfly park, and peaceful walking trails.",
-            timings: "8:00 AM - 7:00 PM",
-            entry: "₹30",
-            extra: "Glasshouse and medicinal plant section are highlights. Wheelchair accessible."
+            name: "The Metropolitan Museum of Art",
+            image: "../images/met-museum.jpg",
+            description: "One of the world’s largest and finest art museums with collections spanning 5,000 years.",
+            timings: "10:00 AM – 5:30 PM",
+            entry: "Suggested donation for NY residents; $30 for visitors",
+            extra: "Closed Wednesdays. Wheelchair accessible. Audio guides available."
         },
         {
-            name: "Ancient Temple",
-            image: "../images/temple.jpg",
-            description: "A serene 12th-century temple known for intricate carvings and spiritual ambiance.",
-            timings: "6:00 AM - 8:00 PM",
+            name: "Brooklyn Bridge",
+            image: "../images/brooklyn-bridge.jpg",
+            description: "Historic suspension bridge offering scenic pedestrian and cycling paths.",
+            timings: "Open 24 hours",
             entry: "Free",
-            extra: "Dress modestly. Remove footwear before entering. Evening aarti is recommended."
+            extra: "Sunrise and sunset offer the best photo opportunities."
         },
         {
-            name: "Modern Art Gallery",
-            image: "../images/gallery.jpg",
-            description: "Contemporary art space featuring works by local and international artists.",
-            timings: "11:00 AM - 7:00 PM (Closed Tuesdays)",
-            entry: "₹100",
-            extra: "Cafe inside with city views. Special exhibitions change monthly."
+            name: "9/11 Memorial & Museum",
+            image: "../images/911-memorial.jpg",
+            description: "A moving tribute honoring the victims of the September 11, 2001 attacks.",
+            timings: "9:00 AM – 7:00 PM",
+            entry: "$28 (Adults), $15 (Youth)",
+            extra: "Quiet and respectful behavior is encouraged. Museum tickets sold separately."
         }
     ];
 
@@ -55,6 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
     spotsData.forEach(spot => {
         const card = document.createElement('div');
         card.className = 'spot-card';
+
         card.innerHTML = `
             <img src="${spot.image}" alt="${spot.name}" class="spot-image">
             <div class="spot-content">
@@ -68,15 +69,16 @@ document.addEventListener('DOMContentLoaded', () => {
                 <div class="extra-info">${spot.extra}</div>
             </div>
         `;
+
         container.appendChild(card);
     });
 
     container.addEventListener('click', (e) => {
         if (e.target.classList.contains('read-more')) {
             const extra = e.target.nextElementSibling;
-            const isActive = extra.classList.contains('active');
+            const isOpen = extra.classList.contains('active');
             extra.classList.toggle('active');
-            e.target.textContent = isActive ? 'Read More ▼' : 'Read Less ▲';
+            e.target.textContent = isOpen ? 'Read More ▼' : 'Read Less ▲';
         }
     });
 });

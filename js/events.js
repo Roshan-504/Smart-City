@@ -1,58 +1,57 @@
-// js/events.js
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Hardcoded events data (current date: December 14, 2025)
-    // Images used are placeholders. You can replace URLs with local images in ../images/
+
     const eventsData = [
-        {
-            title: "Annual Winter Festival",
-            date: "2025-12-20",
-            description: "Celebrate the holiday season with music, food stalls, and fireworks at Central Park.",
-            location: "Central Park",
-            status: "upcoming",
-            image: "../images/event6.jpg" 
-        },
-        {
-            title: "Smart City Marathon",
-            date: "2025-12-15",
-            description: "Join thousands of runners in this annual charity marathon across the city.",
-            location: "City Stadium Start",
-            status: "ongoing",
-            image: "../images/event5.jpg"
-        },
-        {
-            title: "Cultural Dance Night",
-            date: "2025-12-10",
-            description: "Traditional and modern dance performances from local artists.",
-            location: "City Auditorium",
-            status: "past",
-            image: "../images/event1.jpg"
-        },
-        {
-            title: "New Year Countdown",
-            date: "2025-12-31",
-            description: "Grand celebration with live music, light show, and midnight fireworks.",
-            location: "Riverside Promenade",
-            status: "upcoming",
-            image: "../images/event7.jpg"
-        },
-        {
-            title: "Road Maintenance Alert",
-            date: "2025-12-12",
-            description: "Main Bridge closed for repairs until Dec 18. Use alternate routes.",
-            location: "Main Bridge",
-            status: "past",
-            image: "../images/event2.jpeg"
-        },
-        {
-            title: "Eco-Friendly Drive",
-            date: "2025-12-14",
-            description: "Tree plantation and awareness campaign in multiple parks.",
-            location: "Multiple Parks",
-            status: "ongoing",
-            image: "../images/event3.jpg"
-        }
-    ];
+            {
+                title: "Central Park Winter Festival",
+                date: "2025-12-20",
+                description: "Seasonal celebrations with music, food vendors, ice activities, and fireworks.",
+                location: "Central Park, Manhattan",
+                status: "upcoming",
+                image: "../images/event6.jpg"
+            },
+            {
+                title: "NYC Marathon",
+                date: "2025-12-15",
+                description: "World-famous marathon featuring runners from across the globe.",
+                location: "Across All Five Boroughs",
+                status: "ongoing",
+                image: "../images/event5.jpg"
+            },
+            {
+                title: "Broadway Cultural Night",
+                date: "2025-12-10",
+                description: "Live performances showcasing Broadway music, dance, and theater culture.",
+                location: "Broadway Theater District",
+                status: "past",
+                image: "../images/event1.webp"
+            },
+            {
+                title: "Times Square New Year’s Eve",
+                date: "2025-12-31",
+                description: "Iconic New Year’s Eve celebration featuring live performances and the Ball Drop.",
+                location: "Times Square, Manhattan",
+                status: "upcoming",
+                image: "../images/event7.jpg"
+            },
+            {
+                title: "Brooklyn Bridge Maintenance Notice",
+                date: "2025-12-12",
+                description: "Partial closures due to scheduled maintenance. Expect traffic delays.",
+                location: "Brooklyn Bridge",
+                status: "past",
+                image: "../images/event2.jpeg"
+            },
+            {
+                title: "NYC Green Initiative Drive",
+                date: "2025-12-14",
+                description: "Citywide tree plantation and environmental awareness campaign.",
+                location: "Multiple NYC Parks",
+                status: "ongoing",
+                image: "../images/event3.jpg"
+            }
+        ];
+
 
     const eventsContainer = document.getElementById('events-container');
     const noEventsMessage = document.getElementById('no-events');

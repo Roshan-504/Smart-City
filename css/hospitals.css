@@ -1,0 +1,120 @@
+/* Hospitals Page Specific Styles */
+
+.hospitals-hero {
+    background: linear-gradient(135deg, #17a2b8, #138496);
+    color: white;
+    text-align: center;
+    padding: 3rem 0;
+}
+
+.page-title {
+    font-size: 2.4rem;
+    margin-bottom: 0.5rem;
+}
+
+.page-subtitle {
+    font-size: 1.2rem;
+    opacity: 0.95;
+}
+
+.hospitals-controls {
+    padding: 1.5rem 0;
+    background-color: #f1f1f1;
+}
+
+.filter-group {
+    display: flex;
+    justify-content: center;
+}
+
+#type-filter {
+    padding: 0.9rem 1.2rem;
+    font-size: 1.1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: white;
+    min-width: 220px;
+}
+
+.hospitals-list {
+    padding: 2rem 0;
+}
+
+.hospital-card {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    position: relative;
+}
+
+.hospital-card:hover {
+    transform: translateY(-5px);
+}
+
+.hospital-card .type-badge {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    color: white;
+}
+
+.type-badge.government { background-color: #28a745; }
+.type-badge.private { background-color: #007bff; }
+.type-badge.clinic { background-color: #6f42c1; }
+.type-badge.emergency { background-color: #dc3545; }
+
+.hospital-card h3 {
+    margin: 0 0 0.8rem 0;
+    color: #333;
+    font-size: 1.3rem;
+}
+
+.hospital-card .address {
+    color: #666;
+    font-size: 1rem;
+    margin-bottom: 0.8rem;
+    line-height: 1.4;
+}
+
+.hospital-card .phone {
+    font-weight: bold;
+    color: #17a2b8;
+    text-decoration: none;
+}
+
+.hospital-card .phone:hover {
+    text-decoration: underline;
+}
+
+.open-badge {
+    display: inline-block;
+    background-color: #28a745;
+    color: white;
+    padding: 0.3rem 0.7rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    margin-top: 0.8rem;
+}
+
+/* Tablet & Desktop */
+@media (min-width: 768px) {
+    .page-title {
+        font-size: 2.8rem;
+    }
+
+    .cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .cards-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}

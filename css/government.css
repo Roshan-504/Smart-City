@@ -1,0 +1,116 @@
+/* Government Page Specific Styles */
+
+.government-hero {
+    background: linear-gradient(135deg, #6f42c1, #5a32a3);
+    color: white;
+    text-align: center;
+    padding: 3rem 0;
+}
+
+.page-title {
+    font-size: 2.4rem;
+    margin-bottom: 0.5rem;
+}
+
+.page-subtitle {
+    font-size: 1.2rem;
+    opacity: 0.95;
+}
+
+.government-services {
+    padding: 2rem 0;
+}
+
+/* Accordion Styles (similar to emergency page but with government colors) */
+.accordion-btn {
+    width: 100%;
+    background-color: #fff;
+    border: none;
+    border-bottom: 1px solid #eee;
+    padding: 1.4rem 1rem;
+    text-align: left;
+    font-size: 1.15rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    transition: all 0.3s;
+}
+
+.accordion-btn:hover {
+    background-color: #f5f0ff;
+}
+
+.accordion-btn .icon {
+    font-size: 1.8rem;
+    margin-right: 1rem;
+}
+
+.accordion-btn::after {
+    content: '▼';
+    font-size: 1rem;
+    transition: transform 0.3s;
+}
+
+.accordion-btn[aria-expanded="true"]::after {
+    transform: rotate(180deg);
+}
+
+.accordion-panel {
+    background-color: #f9f5ff;
+    padding: 0 1rem;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.4s ease;
+    border-radius: 0 0 10px 10px;
+}
+
+.accordion-panel.active {
+    max-height: 400px; /* Enough for content */
+    padding: 1.5rem 1rem;
+}
+
+.service-info {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+}
+
+.service-info strong {
+    color: #6f42c1;
+}
+
+.external-link {
+    display: inline-block;
+    background-color: #6f42c1;
+    color: white;
+    text-decoration: none;
+    padding: 0.7rem 1.2rem;
+    border-radius: 8px;
+    margin-top: 0.5rem;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.external-link:hover {
+    background-color: #5a32a3;
+}
+
+/* Tablet & Desktop */
+@media (min-width: 768px) {
+    .page-title {
+        font-size: 2.8rem;
+    }
+
+    .accordion-btn {
+        font-size: 1.25rem;
+        padding: 1.6rem 1.5rem;
+    }
+
+    .accordion-btn .icon {
+        font-size: 2rem;
+    }
+}

@@ -1,7 +1,5 @@
-// pages/js/government.js
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Hardcoded government services data
     const servicesData = [
         {
             title: 'Municipal Corporation Office',

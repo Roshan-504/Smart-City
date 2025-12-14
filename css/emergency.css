@@ -1,4 +1,3 @@
-/* Emergency Page Specific Styles */
 
 .emergency-hero {
     background: linear-gradient(135deg, #dc3545, #c82333);
@@ -21,7 +20,6 @@
     padding: 2rem 0;
 }
 
-/* Accordion Styles */
 .accordion-btn {
     width: 100%;
     background-color: #fff;
@@ -65,7 +63,7 @@
 }
 
 .accordion-panel.active {
-    max-height: 200px; /* Adjust if needed */
+    max-height: 200px; 
     padding: 1.2rem 1rem;
 }
 
@@ -91,7 +89,6 @@
     transform: scale(0.98);
 }
 
-/* Tablet & Desktop */
 @media (min-width: 768px) {
     .page-title {
         font-size: 2.8rem;

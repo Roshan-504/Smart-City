@@ -1,63 +1,52 @@
 // pages/js/hospitals.js
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Hardcoded hospital data (static, fully offline)
+    // Hardcoded data with background images (free to use or replace with your own in /images/)
     const hospitalsData = [
         {
+            name: 'NewYork-Presbyterian Hospital',
+            type: 'General Hospital',
+            address: '525 E 68th St, New York, NY 10065',
+            phone: 'tel:2127465454',
+            phoneDisplay: '(212) 746-5454',
+            image: '../images/hospital1.jpg',
+            emergency: true
+        },
+        {
+            name: 'Mount Sinai Hospital',
+            type: 'General Hospital',
+            address: '1 Gustave L. Levy Pl, New York, NY 10029',
+            phone: 'tel:2122416500',
+            phoneDisplay: '(212) 241-6500',
+            image: '../images/hospital2.webp',
+            emergency: true
+        },
+        {
             name: 'City Central Hospital',
-            type: 'government',
+            type: 'Government',
             address: '123 Main Road, Downtown Area',
-            phone: 'tel:042-2345678',
+            phone: 'tel:0422345678',
             phoneDisplay: '042-2345678',
+            image: '../images/hospital3.jpg',
             emergency: true
         },
         {
             name: 'Apollo Medical Center',
-            type: 'private',
+            type: 'Private',
             address: '456 Park Avenue, North District',
-            phone: 'tel:042-3456789',
+            phone: 'tel:0423456789',
             phoneDisplay: '042-3456789',
+            image: '../images/hospital4.jpg',
             emergency: true
         },
         {
             name: 'Green Valley Clinic',
-            type: 'clinic',
+            type: 'Clinic',
             address: '78 Green Street, Suburban Area',
-            phone: 'tel:042-4567890',
+            phone: 'tel:0424567890',
             phoneDisplay: '042-4567890',
+            image: '../images/hospital5.webp',
             emergency: false
-        },
-        {
-            name: 'St. Mary Hospital',
-            type: 'private',
-            address: '900 Heritage Lane, Old Town',
-            phone: 'tel:042-5678901',
-            phoneDisplay: '042-5678901',
-            emergency: true
-        },
-        {
-            name: 'Government General Hospital',
-            type: 'government',
-            address: 'Central Plaza, Civic Center',
-            phone: 'tel:042-6789012',
-            phoneDisplay: '042-6789012',
-            emergency: true
-        },
-        {
-            name: 'Family Care Clinic',
-            type: 'clinic',
-            address: '12 Family Road, East Zone',
-            phone: 'tel:042-7890123',
-            phoneDisplay: '042-7890123',
-            emergency: false
-        },
-        {
-            name: 'Metro Trauma Center',
-            type: 'government',
-            address: 'Highway Junction, South Bypass',
-            phone: 'tel:108',  // Ambulance-linked
-            phoneDisplay: '108 (Emergency)',
-            emergency: true
         }
     ];
 
@@ -65,48 +54,42 @@ document.addEventListener('DOMContentLoaded', () => {
     const container = document.getElementById('hospitals-container');
 
     function renderHospitals() {
-        const selectedType = typeFilter.value;
-
-        const filtered = hospitalsData.filter(hospital => {
-            if (selectedType === 'all') return true;
-            if (selectedType === 'emergency') return hospital.emergency;
-            return hospital.type === selectedType;
+        const selected = typeFilter.value;
+        const filtered = hospitalsData.filter(h => {
+            if (selected === 'all') return true;
+            if (selected === 'emergency') return h.emergency;
+            return h.type.toLowerCase() === selected;
         });
 
         container.innerHTML = '';
 
         if (filtered.length === 0) {
-            container.innerHTML = '<p style="grid-column: 1 / -1; text-align: center; color: #666;">No facilities found for selected filter.</p>';
+            container.innerHTML = '<p style="grid-column:1/-1;text-align:center;color:#666;">No facilities found.</p>';
             return;
         }
 
-        filtered.forEach(hospital => {
+        filtered.forEach(h => {
             const card = document.createElement('div');
             card.className = 'hospital-card';
 
-            let badge = '';
-            if (hospital.emergency) {
-                badge = '<span class="type-badge emergency">24/7 Emergency</span>';
-            } else {
-                badge = `<span class="type-badge ${hospital.type}">${hospital.type.charAt(0).toUpperCase() + hospital.type.slice(1)}</span>`;
-            }
-
-            let openBadge = hospital.emergency ? '<span class="open-badge">Open 24 Hours</span>' : '';
+            const emergencyText = h.emergency ? '<div class="info-row"><span class="icon">🕐</span>24/7 Emergency</div>' : '';
 
             card.innerHTML = `
-                ${badge}
-                <h3>${hospital.name}</h3>
-                <p class="address">${hospital.address}</p>
-                <a href="${hospital.phone}" class="phone">📞 ${hospital.phoneDisplay}</a>
-                ${openBadge}
+                <div class="card-image">
+                    <img src="${h.image}" alt="${h.name} exterior">
+                    <div class="type-badge">${h.type}</div>
+                </div>
+                <div class="card-content">
+                    <h3>${h.name}</h3>
+                    <div class="info-row"><span class="icon">📍</span>${h.address}</div>
+                    ${emergencyText}
+                    <a href="${h.phone}" class="call-button">📞 ${h.phoneDisplay}</a>
+                </div>
             `;
             container.appendChild(card);
         });
     }
 
-    // Event listener
     typeFilter.addEventListener('change', renderHospitals);
-
-    // Initial render
     renderHospitals();
 });

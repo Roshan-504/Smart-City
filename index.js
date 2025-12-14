@@ -1,6 +1,4 @@
-// index.js
 document.addEventListener('DOMContentLoaded', () => {
-    // Hamburger Menu Toggle
     const hamburger = document.querySelector('.hamburger');
     const nav = document.querySelector('.nav');
 
@@ -12,7 +10,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Time-based Greeting
     const greetingElement = document.getElementById('greeting');
     if (greetingElement) {
         const hour = new Date().getHours();
@@ -29,7 +26,6 @@ document.addEventListener('DOMContentLoaded', () => {
         greetingElement.textContent = greeting;
     }
 
-    // Today's Highlights (hardcoded static data)
     const highlightsData = [
         {
             title: 'Upcoming Event',

@@ -1,7 +1,5 @@
-// pages/js/transport.js
 
 document.addEventListener('DOMContentLoaded', () => {
-    // Hardcoded transport data (static content)
     const routesData = [
         { type: 'bus', name: 'Route 101', path: 'Central Station → City Mall → Airport', fare: '₹20 - ₹40' },
         { type: 'bus', name: 'Route 205', path: 'Railway Colony → Downtown → Beach Road', fare: '₹15 - ₹30' },
@@ -48,10 +46,8 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Event listeners
     searchInput.addEventListener('input', renderRoutes);
     typeFilter.addEventListener('change', renderRoutes);
 
-    // Initial render
     renderRoutes();
 });

@@ -1,4 +1,3 @@
-/* Government Page Specific Styles */
 
 .government-hero {
     background: linear-gradient(135deg, #6f42c1, #5a32a3);
@@ -21,7 +20,6 @@
     padding: 2rem 0;
 }
 
-/* Accordion Styles (similar to emergency page but with government colors) */
 .accordion-btn {
     width: 100%;
     background-color: #fff;
@@ -70,7 +68,7 @@
 }
 
 .accordion-panel.active {
-    max-height: 400px; /* Enough for content */
+    max-height: 400px; 
     padding: 1.5rem 1rem;
 }
 
@@ -99,7 +97,6 @@
     background-color: #5a32a3;
 }
 
-/* Tablet & Desktop */
 @media (min-width: 768px) {
     .page-title {
         font-size: 2.8rem;

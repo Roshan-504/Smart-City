@@ -1,0 +1,127 @@
+/* Hospitals Page - Modern Card Design Inspired by Screenshot */
+
+.hospitals-hero {
+    background: linear-gradient(135deg, #17a2b8, #138496);
+    color: white;
+    text-align: center;
+    padding: 3rem 0;
+}
+
+.page-title { font-size: 2.4rem; margin-bottom: 0.5rem; }
+.page-subtitle { font-size: 1.2rem; opacity: 0.95; }
+
+.hospitals-controls {
+    padding: 1.5rem 0;
+    background-color: #f1f1f1;
+}
+
+.filter-group { display: flex; justify-content: center; }
+#type-filter {
+    padding: 0.9rem 1.2rem;
+    font-size: 1.1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: white;
+    min-width: 220px;
+}
+
+.hospitals-list { padding: 2rem 0; }
+
+/* New Card Style */
+.hospital-card {
+    background: white;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+}
+
+.hospital-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 16px 30px rgba(0, 0, 0, 0.18);
+}
+
+.card-image {
+    position: relative;
+    height: 180px;
+    overflow: hidden;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.type-badge {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    background-color: #28a745;
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 30px;
+    font-size: 0.95rem;
+    font-weight: bold;
+}
+
+.card-content {
+    padding: 1.5rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.card-content h3 {
+    font-size: 1.5rem;
+    margin: 0 0 1rem 0;
+    color: #333;
+}
+
+.info-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.8rem;
+    color: #666;
+    font-size: 1rem;
+}
+
+.info-row .icon {
+    margin-right: 0.8rem;
+    font-size: 1.2rem;
+}
+
+.call-button {
+    margin-top: auto;
+    background: linear-gradient(135deg, #28a745, #20c997);
+    color: white;
+    text-decoration: none;
+    padding: 1rem;
+    border-radius: 16px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(40, 167, 69, 0.3);
+    transition: transform 0.2s;
+}
+
+.call-button:hover {
+    transform: scale(1.03);
+}
+
+.call-button:active {
+    transform: scale(0.98);
+}
+
+/* Responsive */
+@media (min-width: 768px) {
+    .page-title { font-size: 2.8rem; }
+    .cards-grid { grid-template-columns: repeat(2, 1fr); }
+    .card-image { height: 220px; }
+}
+
+@media (min-width: 1024px) {
+    .cards-grid { grid-template-columns: repeat(3, 1fr); }
+}

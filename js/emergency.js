@@ -7,7 +7,6 @@ document.addEventListener('DOMContentLoaded', () => {
             const panel = button.nextElementSibling;
             const isActive = panel.classList.contains('active');
 
-            // Close all others (optional: remove if you want multiple open)
             document.querySelectorAll('.accordion-panel.active').forEach(p => {
                 p.classList.remove('active');
             });
@@ -15,7 +14,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 b.setAttribute('aria-expanded', 'false');
             });
 
-            // Toggle current
             if (!isActive) {
                 panel.classList.add('active');
                 button.setAttribute('aria-expanded', 'true');

@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         {
             name: "City Museum",
-            image: "../images/museum.jpg",
+            image: "../images/museum.webp",
             description: "Home to ancient artifacts, art collections, and interactive exhibits showcasing the region's heritage.",
             timings: "10:00 AM - 5:00 PM (Closed Mondays)",
             entry: "₹20 (Adults), Free for children",

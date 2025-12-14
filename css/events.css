@@ -1,4 +1,4 @@
-/* Events Page Specific Styles */
+/* css/events.css */
 
 .events-hero {
     background: linear-gradient(135deg, #6f42c1, #563d7c);
@@ -49,15 +49,18 @@
 .events-grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 1.5rem;
+    gap: 2rem;
 }
 
+/* --- Event Card Styling --- */
 .event-card {
     background: white;
     border-radius: 12px;
-    overflow: hidden;
+    overflow: hidden; /* Keeps image corners rounded */
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
 }
 
 .event-card:hover {
@@ -65,62 +68,82 @@
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 
+/* Image Section */
+.event-image {
+    width: 100%;
+    height: 180px;
+    background-color: #eee;
+}
+
+.event-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures image fills area without stretching */
+}
+
+/* Content Wrapper */
+.event-content-wrapper {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
 .event-header {
-    background: linear-gradient(135deg, #9d6fd6, #6f42c1);
-    color: white;
-    padding: 1rem;
-    text-align: center;
+    margin-bottom: 1rem;
 }
 
 .event-title {
-    font-size: 1.3rem;
-    margin-bottom: 0.4rem;
+    font-size: 1.4rem;
+    margin: 0.5rem 0;
+    color: #333;
 }
 
 .event-date {
-    font-size: 1rem;
-    opacity: 0.9;
+    font-size: 0.95rem;
+    color: #666;
+    font-weight: 500;
 }
 
 .event-badge {
     display: inline-block;
-    background-color: #28a745;
-    color: white;
-    padding: 0.3rem 0.8rem;
-    border-radius: 20px;
-    font-size: 0.85rem;
-    margin-top: 0.5rem;
+    padding: 0.25rem 0.6rem;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
 .event-badge.upcoming {
-    background-color: #ffc107;
-    color: #212529;
+    background-color: #fff3cd;
+    color: #856404;
 }
 
 .event-badge.ongoing {
-    background-color: #28a745;
+    background-color: #d4edda;
+    color: #155724;
 }
 
 .event-badge.past {
-    background-color: #6c757d;
+    background-color: #e2e3e5;
+    color: #383d41;
 }
 
 .event-body {
-    padding: 1.2rem;
+    margin-top: auto; /* Pushes body to bottom if card height varies */
 }
 
 .event-description {
     margin-bottom: 1rem;
     color: #555;
+    line-height: 1.5;
 }
 
 .event-location {
     font-size: 0.95rem;
-    color: #666;
-}
-
-.event-location strong {
-    color: #333;
+    color: #6f42c1;
+    font-weight: 600;
 }
 
 .no-events-message {

@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Hardcoded data with background images (free to use or replace with your own in /images/)
     const hospitalsData = [
         {
-            name: 'NewYork-Presbyterian Hospital',
+            name: 'Jupiter Hospital',
             type: 'General Hospital',
             address: '525 E 68th St, New York, NY 10065',
             phone: 'tel:2127465454',

@@ -1,19 +1,43 @@
-*,
-*::before,
-*::after {
+/* index.css - Full Code */
+
+/* --- 1. Variables & Global Reset --- */
+:root {
+    --primary: #0056b3;           /* Deep Blue */
+    --primary-light: #e3f2fd;     /* Light Blue Background */
+    --primary-hover: #004494;     /* Darker Blue for hover */
+    --accent: #ff6b6b;            /* Accent Color */
+    --text-main: #333333;
+    --text-light: #666666;
+    --bg-body: #f8f9fa;
+    --white: #ffffff;
+    --shadow-sm: 0 4px 6px rgba(0,0,0,0.05);
+    --shadow-md: 0 10px 20px rgba(0,0,0,0.1);
+    --radius: 12px;
+}
+
+*, *::before, *::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
 body {
-    font-family: 'Segoe UI', Arial, sans-serif;
+    font-family: 'Segoe UI', 'Poppins', Roboto, sans-serif;
     line-height: 1.6;
-    color: #333;
-    background-color: #f8f9fa;
+    color: var(--text-main);
+    background-color: var(--bg-body);
     min-height: 100vh;
     display: flex;
     flex-direction: column;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
 }
 
 .container {
@@ -23,13 +47,15 @@ body {
     padding: 0 1rem;
 }
 
+/* --- 2. Enhanced Header & Navigation --- */
 .header {
-    background-color: white;
-    color: rgb(22, 85, 179);
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    background-color: var(--white);
+    /* Soft modern shadow */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
     position: sticky;
     top: 0;
     z-index: 1000;
+    width: 100%;
 }
 
 .header-container {
@@ -40,141 +66,238 @@ body {
 }
 
 .logo {
-    font-size: 1.5rem;
-    font-weight: bold;
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: var(--primary);
+    letter-spacing: -0.5px;
 }
 
+/* Hamburger Menu (Mobile/Tablet) */
 .hamburger {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 30px;
-    height: 21px;
+    width: 28px;
+    height: 20px;
     background: transparent;
     border: none;
     cursor: pointer;
+    z-index: 1001;
 }
 
 .hamburger span {
     display: block;
     height: 3px;
     width: 100%;
-    background: black;
-    border-radius: 3px;
-    transition: all 0.3s;
+    background: #333;
+    border-radius: 10px;
+    transition: all 0.3s ease;
 }
 
+/* Mobile Nav Dropdown */
 .nav {
     position: absolute;
     top: 100%;
     left: 0;
     right: 0;
-    background-color: #7caee4;
+    background-color: var(--white);
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.4s ease;
+    transition: max-height 0.4s ease-in-out;
+    border-bottom: 1px solid #f0f0f0;
 }
 
 .nav.active {
-    max-height: 600px;
+    max-height: 600px; /* Expands for menu items */
+    box-shadow: 0 10px 15px rgba(0,0,0,0.05);
 }
 
 .nav-list {
-    list-style: none;
-    padding: 1rem 0;
+    padding: 0;
+    margin: 0;
 }
 
+/* Mobile Link Styling */
 .nav-link {
     display: block;
-    padding: 0.8rem 1.5rem;
-    color: black;
-    text-decoration: none;
+    padding: 1rem 1.5rem;
+    color: #555;
     font-size: 1.1rem;
+    font-weight: 500;
+    border-bottom: 1px solid #f9f9f9;
+    transition: all 0.3s ease;
 }
 
 .nav-link:hover,
 .nav-link.active {
-    background-color: rgba(24, 96, 239, 0.8);
+    background-color: var(--primary-light);
+    color: var(--primary);
+    padding-left: 2rem; /* Slide effect */
 }
 
+/* --- 3. Hero Section --- */
 .main-content {
     flex: 1;
 }
 
 .hero {
-    background: linear-gradient(135deg, #007bff, #0056b3);
-    color: white;
-    padding: 3rem 0;
+    /* Modern Gradient */
+    background: linear-gradient(135deg, #0056b3, #007bff);
+    color: var(--white);
+    padding: 4rem 0 5rem;
     text-align: center;
+    margin-bottom: 2rem;
 }
 
 .greeting {
-    font-size: 2.2rem;
+    font-size: 2.5rem;
+    font-weight: 700;
     margin-bottom: 0.5rem;
 }
 
 .tagline {
     font-size: 1.1rem;
     opacity: 0.9;
+    margin-bottom: 1.5rem;
 }
 
-.section-title {
-    font-size: 1.6rem;
-    margin: 2rem 0 1rem;
-    text-align: center;
-    color: #007bff;
+/* Search Bar (Optional if you added HTML for it) */
+.search-wrapper {
+    max-width: 500px;
+    margin: 1.5rem auto 0;
+    display: flex;
+    background: var(--white);
+    padding: 5px;
+    border-radius: 50px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
+
+.search-wrapper input {
+    flex: 1;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 50px;
+    outline: none;
+}
+
+.search-btn {
+    background-color: var(--primary);
+    color: var(--white);
+    border: none;
+    padding: 10px 25px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.3s;
+}
+
+.search-btn:hover {
+    background-color: var(--primary-hover);
+}
+
+/* --- 4. Section Titles & Grids --- */
+.section-title {
+    font-size: 1.8rem;
+    margin: 2rem 0 1.5rem;
+    text-align: center;
+    color: var(--primary);
+    font-weight: 700;
+    position: relative;
+    display: inline-block;
+}
+
+/* Center alignment wrapper for title underline */
+.title-wrapper { text-align: center; }
 
 .cards-grid {
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
     gap: 1.5rem;
-    margin-top: 1rem;
+    padding-bottom: 2rem;
 }
 
+/* --- 5. Action Cards (Dashboard) --- */
 .action-card {
-    background: white;
-    border-radius: 12px;
+    background: var(--white);
+    border-radius: var(--radius);
     padding: 1.8rem 1rem;
     text-align: center;
     text-decoration: none;
-    color: #333;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s, box-shadow 0.3s;
+    color: var(--text-main);
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(0,0,0,0.03);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
 .action-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    box-shadow: var(--shadow-md);
+    border-color: var(--primary-light);
 }
 
+/* Icon Styles */
 .action-card .icon {
     font-size: 3rem;
     display: block;
     margin-bottom: 0.8rem;
+    transition: transform 0.3s;
+}
+
+/* Icon Bubble Style (If using the enhanced HTML) */
+.icon-bubble {
+    font-size: 2rem;
+    background-color: #f0f4ff;
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+    transition: transform 0.3s;
+}
+
+.action-card:hover .icon, 
+.action-card:hover .icon-bubble {
+    transform: scale(1.1);
 }
 
 .action-card h4 {
-    font-size: 1.3rem;
-    color: #007bff;
+    font-size: 1.2rem;
+    color: var(--primary);
+    font-weight: 600;
 }
 
+.action-card p {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    margin-top: 5px;
+}
+
+/* --- 6. Highlights & Footer --- */
 .highlight-card {
-    background: white;
-    border-radius: 12px;
+    background: var(--white);
+    border-radius: var(--radius);
     padding: 1.5rem;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--shadow-sm);
+    border-left: 5px solid var(--accent);
 }
 
 .footer {
     background-color: #343a40;
-    color: white;
+    color: var(--white);
     text-align: center;
-    padding: 1.5rem 0;
-    margin-top: 1rem;
+    padding: 2rem 0;
+    margin-top: auto;
 }
 
-@media (min-width: 768px) {
+/* --- 7. Media Queries --- */
+
+/* Desktop Navigation (Min-width: 1024px) */
+@media (min-width: 1024px) {
     .hamburger {
         display: none;
     }
@@ -183,29 +306,50 @@ body {
         position: static;
         max-height: none;
         background: transparent;
+        border-bottom: none;
+        box-shadow: none;
+        overflow: visible;
     }
 
     .nav-list {
         display: flex;
-        padding: 0;
+        align-items: center;
+        gap: 0.5rem;
     }
 
+    /* Desktop Pill Buttons */
     .nav-link {
-        padding: 0.5rem 1rem;
-        font-size: 1rem;
+        padding: 0.5rem 0.6rem;
+        border-radius: 50px;
+        font-size: 0.95rem;
+        border-bottom: none;
+        color: #555;
     }
 
-    .cards-grid {
-        grid-template-columns: repeat(2, 1fr);
+    .nav-link:hover,
+    .nav-link.active {
+        background-color: var(--primary-light);
+        color: var(--primary);
+        padding-left: 1rem; /* Reset mobile slide */
+        transform: translateY(-2px);
     }
-}
 
-@media (min-width: 1024px) {
+    /* Grid Adjustments */
     .cards-grid {
         grid-template-columns: repeat(4, 1fr);
     }
-
+    
     .greeting {
-        font-size: 2.8rem;
+        font-size: 3rem;
+    }
+}
+
+/* Tablet Adjustments (768px - 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .hamburger {
+        display: flex; /* Keep hamburger on tablet for space */
+    }
+    .cards-grid {
+        grid-template-columns: repeat(2, 1fr);
     }
 }

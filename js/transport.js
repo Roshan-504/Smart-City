@@ -1,8 +1,6 @@
-// js/transport.js
 
 document.addEventListener('DOMContentLoaded', () => {
     
-    // NYC Transport Data
     const routesData = [
         { 
             type: 'subway', 
@@ -59,7 +57,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const container = document.getElementById('routes-container');
 
     function renderRoutes() {
-        // Safe check in case elements are missing
         if (!searchInput || !typeFilter || !container) return;
 
         const searchTerm = searchInput.value.toLowerCase().trim();
@@ -83,7 +80,6 @@ document.addEventListener('DOMContentLoaded', () => {
             const card = document.createElement('div');
             card.className = 'route-card';
             
-            // Create Badge
             const badge = `<span class="type-badge ${route.type}">${route.type.toUpperCase()}</span>`;
 
             card.innerHTML = `
@@ -96,10 +92,8 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Event Listeners
     if (searchInput) searchInput.addEventListener('input', renderRoutes);
     if (typeFilter) typeFilter.addEventListener('change', renderRoutes);
 
-    // Initial Render
     renderRoutes();
 });

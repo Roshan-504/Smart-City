@@ -1,8 +1,6 @@
-// pages/js/hospitals.js
 
 document.addEventListener('DOMContentLoaded', () => {
 
-    // NYC Hospitals & Clinics (Realistic, academic-safe data)
     const hospitalsData = [
         {
             name: 'NewYork-Presbyterian Hospital',

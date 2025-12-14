@@ -1,10 +1,8 @@
-// pages/js/feedback.js
 
 document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById('feedback-form');
     const successMessage = document.getElementById('success-message');
 
-    // Real-time validation
     const inputs = form.querySelectorAll('input[required], textarea[required]');
     inputs.forEach(input => {
         input.addEventListener('blur', validateField);
@@ -39,7 +37,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         let isValid = true;
 
-        // Check all required fields
         inputs.forEach(input => {
             if (!input.validity.valid) {
                 isValid = false;
@@ -48,11 +45,9 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         if (isValid) {
-            // Hide form and show success message
             form.style.display = 'none';
             successMessage.classList.add('show');
 
-            // Optional: Reset form after delay
             setTimeout(() => {
                 form.reset();
             }, 1000);

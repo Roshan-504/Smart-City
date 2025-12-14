@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Events & Announcements - Smart City Guide</title>
-    <meta name="description" content="Stay updated with upcoming city events, festivals, announcements, and road alerts.">
     <link rel="stylesheet" href="../index.css">
     <link rel="stylesheet" href="../css/events.css">
 </head>
@@ -12,12 +11,10 @@
     <header class="header">
         <div class="container header-container">
             <h1 class="logo">Smart City Guide</h1>
-            <button class="hamburger" aria-label="Open navigation menu" aria-expanded="false">
-                <span></span>
-                <span></span>
-                <span></span>
+            <button class="hamburger" aria-label="Open navigation menu">
+                <span></span><span></span><span></span>
             </button>
-            <nav class="nav" aria-label="Main navigation">
+            <nav class="nav">
                 <ul class="nav-list">
                     <li><a href="../index.html" class="nav-link">Home</a></li>
                     <li><a href="emergency.html" class="nav-link">Emergency</a></li>
@@ -38,7 +35,7 @@
         <section class="events-hero">
             <div class="container">
                 <h2 class="page-title">Events & Announcements</h2>
-                <p class="page-subtitle">Upcoming festivals, cultural programs, and important city updates</p>
+                <p class="page-subtitle">Upcoming festivals, cultural programs, and updates</p>
             </div>
         </section>
 
@@ -51,9 +48,8 @@
                     <button class="filter-btn" data-filter="past">Past</button>
                 </div>
 
-                <div id="events-container" class="events-grid" role="region" aria-live="polite">
-                    <!-- Events will be dynamically inserted here by JavaScript -->
-                </div>
+                <div id="events-container" class="events-grid">
+                    </div>
 
                 <p id="no-events" class="no-events-message" style="display: none;">
                     No events match the selected filter.
@@ -64,7 +60,7 @@
 
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2025 Smart City Guide. All rights reserved.</p>
+            <p>&copy; 2025 Smart City Guide.</p>
         </div>
     </footer>
 

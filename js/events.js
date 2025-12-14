@@ -1,49 +1,56 @@
-// pages/js/events.js
+// js/events.js
 
 document.addEventListener('DOMContentLoaded', () => {
     // Hardcoded events data (current date: December 14, 2025)
+    // Images used are placeholders. You can replace URLs with local images in ../images/
     const eventsData = [
         {
             title: "Annual Winter Festival",
-            date: "2025-12-20", // Upcoming
+            date: "2025-12-20",
             description: "Celebrate the holiday season with music, food stalls, and fireworks at Central Park.",
             location: "Central Park",
-            status: "upcoming"
+            status: "upcoming",
+            image: "../images/hospital1.jpg" 
         },
         {
             title: "Smart City Marathon",
-            date: "2025-12-15", // Ongoing (today +1)
+            date: "2025-12-15",
             description: "Join thousands of runners in this annual charity marathon across the city.",
             location: "City Stadium Start",
-            status: "ongoing"
+            status: "ongoing",
+            image: "https://placehold.co/600x400/27ae60/ffffff?text=City+Marathon"
         },
         {
             title: "Cultural Dance Night",
-            date: "2025-12-10", // Past
+            date: "2025-12-10",
             description: "Traditional and modern dance performances from local artists.",
             location: "City Auditorium",
-            status: "past"
+            status: "past",
+            image: "https://placehold.co/600x400/8e44ad/ffffff?text=Dance+Night"
         },
         {
-            title: "New Year Countdown Event",
-            date: "2025-12-31", // Upcoming
+            title: "New Year Countdown",
+            date: "2025-12-31",
             description: "Grand celebration with live music, light show, and midnight fireworks.",
             location: "Riverside Promenade",
-            status: "upcoming"
+            status: "upcoming",
+            image: "https://placehold.co/600x400/f39c12/ffffff?text=New+Year+2026"
         },
         {
             title: "Road Maintenance Alert",
-            date: "2025-12-12", // Past
+            date: "2025-12-12",
             description: "Main Bridge closed for repairs until Dec 18. Use alternate routes.",
             location: "Main Bridge",
-            status: "past"
+            status: "past",
+            image: "https://placehold.co/600x400/c0392b/ffffff?text=Road+Closed"
         },
         {
             title: "Eco-Friendly Drive",
-            date: "2025-12-14", // Today → Ongoing
+            date: "2025-12-14",
             description: "Tree plantation and awareness campaign in multiple parks.",
             location: "Multiple Parks",
-            status: "ongoing"
+            status: "ongoing",
+            image: "https://placehold.co/600x400/16a085/ffffff?text=Eco+Drive"
         }
     ];
 
@@ -54,13 +61,13 @@ document.addEventListener('DOMContentLoaded', () => {
     function renderEvents(filter = 'all') {
         eventsContainer.innerHTML = '';
 
-        const today = new Date('2025-12-14'); // Fixed current date as per context
+        const today = new Date('2025-12-14');
         const filteredEvents = eventsData.filter(event => {
             const eventDate = new Date(event.date);
             if (filter === 'upcoming') return eventDate > today;
             if (filter === 'ongoing') return eventDate.toDateString() === today.toDateString();
             if (filter === 'past') return eventDate < today;
-            return true; // 'all'
+            return true;
         });
 
         if (filteredEvents.length === 0) {
@@ -70,7 +77,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         noEventsMessage.style.display = 'none';
 
-        // Sort: Upcoming first, then ongoing, then past
+        // Sort: Upcoming first
         filteredEvents.sort((a, b) => new Date(a.date) - new Date(b.date));
 
         filteredEvents.forEach(event => {
@@ -80,15 +87,21 @@ document.addEventListener('DOMContentLoaded', () => {
             const badgeText = event.status === 'upcoming' ? 'Upcoming' :
                               event.status === 'ongoing' ? 'Ongoing Now' : 'Past';
 
+            // Added Image div at the top
             card.innerHTML = `
-                <div class="event-header">
-                    <h3 class="event-title">${event.title}</h3>
-                    <p class="event-date">${formatDate(event.date)}</p>
-                    <span class="event-badge ${event.status}">${badgeText}</span>
+                <div class="event-image">
+                    <img src="${event.image}" alt="${event.title}" loading="lazy">
                 </div>
-                <div class="event-body">
-                    <p class="event-description">${event.description}</p>
-                    <p class="event-location"><strong>Location:</strong> ${event.location}</p>
+                <div class="event-content-wrapper">
+                    <div class="event-header">
+                        <span class="event-badge ${event.status}">${badgeText}</span>
+                        <h3 class="event-title">${event.title}</h3>
+                        <p class="event-date">📅 ${formatDate(event.date)}</p>
+                    </div>
+                    <div class="event-body">
+                        <p class="event-description">${event.description}</p>
+                        <p class="event-location">📍 ${event.location}</p>
+                    </div>
                 </div>
             `;
             eventsContainer.appendChild(card);
@@ -96,11 +109,10 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function formatDate(dateStr) {
-        const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+        const options = { weekday: 'short', month: 'short', day: 'numeric' };
         return new Date(dateStr).toLocaleDateString('en-US', options);
     }
 
-    // Filter button handling
     filterButtons.forEach(btn => {
         btn.addEventListener('click', () => {
             filterButtons.forEach(b => b.classList.remove('active'));
@@ -109,6 +121,5 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Initial render
     renderEvents('all');
 });

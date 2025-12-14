@@ -1,0 +1,148 @@
+/* Events Page Specific Styles */
+
+.events-hero {
+    background: linear-gradient(135deg, #6f42c1, #563d7c);
+    color: white;
+    text-align: center;
+    padding: 3rem 0;
+}
+
+.page-title {
+    font-size: 2.4rem;
+    margin-bottom: 0.5rem;
+}
+
+.page-subtitle {
+    font-size: 1.2rem;
+    opacity: 0.95;
+}
+
+.events-list-section {
+    padding: 2rem 0 3rem;
+}
+
+.filter-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.filter-btn {
+    background-color: #f1f1f1;
+    color: #333;
+    border: none;
+    padding: 0.7rem 1.4rem;
+    border-radius: 50px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+    background-color: #6f42c1;
+    color: white;
+}
+
+.events-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+}
+
+.event-card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.event-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.event-header {
+    background: linear-gradient(135deg, #9d6fd6, #6f42c1);
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+
+.event-title {
+    font-size: 1.3rem;
+    margin-bottom: 0.4rem;
+}
+
+.event-date {
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
+.event-badge {
+    display: inline-block;
+    background-color: #28a745;
+    color: white;
+    padding: 0.3rem 0.8rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    margin-top: 0.5rem;
+}
+
+.event-badge.upcoming {
+    background-color: #ffc107;
+    color: #212529;
+}
+
+.event-badge.ongoing {
+    background-color: #28a745;
+}
+
+.event-badge.past {
+    background-color: #6c757d;
+}
+
+.event-body {
+    padding: 1.2rem;
+}
+
+.event-description {
+    margin-bottom: 1rem;
+    color: #555;
+}
+
+.event-location {
+    font-size: 0.95rem;
+    color: #666;
+}
+
+.event-location strong {
+    color: #333;
+}
+
+.no-events-message {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #666;
+    padding: 3rem 0;
+}
+
+/* Tablet & Desktop */
+@media (min-width: 768px) {
+    .page-title {
+        font-size: 2.8rem;
+    }
+
+    .events-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .events-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}

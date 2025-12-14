@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events & Announcements - Smart City Guide</title>
+    <meta name="description" content="Stay updated with upcoming city events, festivals, announcements, and road alerts.">
+    <link rel="stylesheet" href="../index.css">
+    <link rel="stylesheet" href="../css/events.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container header-container">
+            <h1 class="logo">Smart City Guide</h1>
+            <button class="hamburger" aria-label="Open navigation menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="nav" aria-label="Main navigation">
+                <ul class="nav-list">
+                    <li><a href="../index.html" class="nav-link">Home</a></li>
+                    <li><a href="emergency.html" class="nav-link">Emergency</a></li>
+                    <li><a href="transport.html" class="nav-link">Transport</a></li>
+                    <li><a href="hospitals.html" class="nav-link">Hospitals</a></li>
+                    <li><a href="government.html" class="nav-link">Government</a></li>
+                    <li><a href="map.html" class="nav-link">City Map</a></li>
+                    <li><a href="tourist.html" class="nav-link">Tourist Spots</a></li>
+                    <li><a href="safety.html" class="nav-link">Safety Tips</a></li>
+                    <li><a href="events.html" class="nav-link active">Events</a></li>
+                    <li><a href="feedback.html" class="nav-link">Feedback</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <section class="events-hero">
+            <div class="container">
+                <h2 class="page-title">Events & Announcements</h2>
+                <p class="page-subtitle">Upcoming festivals, cultural programs, and important city updates</p>
+            </div>
+        </section>
+
+        <section class="events-list-section">
+            <div class="container">
+                <div class="filter-controls">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="upcoming">Upcoming</button>
+                    <button class="filter-btn" data-filter="ongoing">Ongoing</button>
+                    <button class="filter-btn" data-filter="past">Past</button>
+                </div>
+
+                <div id="events-container" class="events-grid" role="region" aria-live="polite">
+                    <!-- Events will be dynamically inserted here by JavaScript -->
+                </div>
+
+                <p id="no-events" class="no-events-message" style="display: none;">
+                    No events match the selected filter.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Smart City Guide. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../index.js"></script>
+    <script src="../js/events.js"></script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback & Help - Smart City Guide</title>
+    <meta name="description" content="Share your feedback, report issues, or get help with city services.">
+    <link rel="stylesheet" href="../index.css">
+    <link rel="stylesheet" href="../css/feedback.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container header-container">
+            <h1 class="logo">Smart City Guide</h1>
+            <button class="hamburger" aria-label="Open navigation menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="nav" aria-label="Main navigation">
+                <ul class="nav-list">
+                    <li><a href="../index.html" class="nav-link">Home</a></li>
+                    <li><a href="emergency.html" class="nav-link">Emergency</a></li>
+                    <li><a href="transport.html" class="nav-link">Transport</a></li>
+                    <li><a href="hospitals.html" class="nav-link">Hospitals</a></li>
+                    <li><a href="government.html" class="nav-link">Government</a></li>
+                    <li><a href="map.html" class="nav-link">City Map</a></li>
+                    <li><a href="tourist.html" class="nav-link">Tourist Spots</a></li>
+                    <li><a href="safety.html" class="nav-link">Safety Tips</a></li>
+                    <li><a href="events.html" class="nav-link">Events</a></li>
+                    <li><a href="feedback.html" class="nav-link active">Feedback</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <section class="feedback-hero">
+            <div class="container">
+                <h2 class="page-title">Feedback & Help</h2>
+                <p class="page-subtitle">We value your opinion! Help us improve city services.</p>
+            </div>
+        </section>
+
+        <section class="feedback-form-section">
+            <div class="container">
+                <form id="feedback-form" novalidate>
+                    <div class="form-group">
+                        <label for="name">Your Name <span class="required">*</span></label>
+                        <input type="text" id="name" name="name" required aria-required="true">
+                        <span class="error-message"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Email Address <span class="required">*</span></label>
+                        <input type="email" id="email" name="email" required aria-required="true">
+                        <span class="error-message"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <select id="subject" name="subject">
+                            <option value="">Select an option</option>
+                            <option value="general">General Feedback</option>
+                            <option value="bug">Report a Problem</option>
+                            <option value="suggestion">Suggestion</option>
+                            <option value="complaint">Complaint</option>
+                            <option value="appreciation">Appreciation</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Message <span class="required">*</span></label>
+                        <textarea id="message" name="message" rows="6" required aria-required="true"></textarea>
+                        <span class="error-message"></span>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Submit Feedback</button>
+                </form>
+
+                <div id="success-message" class="success-message" role="alert" aria-live="polite">
+                    <h3>Thank You! 🎉</h3>
+                    <p>Your feedback has been submitted successfully. We appreciate your time and will review it soon.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Smart City Guide. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="../index.js"></script>
+    <script src="js/feedback.js"></script>
+</body>
+</html>

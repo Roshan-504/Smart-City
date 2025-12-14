@@ -1,0 +1,98 @@
+.safety-hero {
+    background: linear-gradient(135deg, #fd7e14, #e96d00);
+    color: white;
+    text-align: center;
+    padding: 3rem 0;
+}
+
+.page-title {
+    font-size: 2.4rem;
+    margin-bottom: 0.5rem;
+}
+
+.page-subtitle {
+    font-size: 1.2rem;
+    opacity: 0.95;
+}
+
+.safety-list {
+    padding: 2rem 0 3rem;
+}
+
+.accordion-btn {
+    width: 100%;
+    background-color: #fff;
+    border: none;
+    border-bottom: 1px solid #eee;
+    padding: 1.2rem 1rem;
+    text-align: left;
+    font-size: 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    border-radius: 8px;
+    margin-bottom: 0.8rem;
+    transition: background-color 0.3s;
+}
+
+.accordion-btn:hover {
+    background-color: #f8f9fa;
+}
+
+.accordion-btn::after {
+    content: "▼";
+    font-size: 1rem;
+    color: #fd7e14;
+}
+
+.accordion-btn[aria-expanded="true"]::after {
+    content: "▲";
+}
+
+.accordion-panel {
+    background-color: #f9f9f9;
+    padding: 0 1.2rem;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, padding 0.4s ease;
+    border-radius: 0 0 8px 8px;
+}
+
+.accordion-panel.active {
+    max-height: 500px;
+    padding: 1.5rem 1.2rem;
+}
+
+.accordion-panel ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.accordion-panel li {
+    padding: 0.6rem 0;
+    position: relative;
+    padding-left: 1.8rem;
+    line-height: 1.5;
+}
+
+.accordion-panel li::before {
+    content: "✓";
+    color: #fd7e14;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
+@media (min-width: 768px) {
+    .page-title {
+        font-size: 2.8rem;
+    }
+
+    .accordion-btn {
+        font-size: 1.3rem;
+        padding: 1.5rem;
+    }
+}

@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
             description: "Celebrate the holiday season with music, food stalls, and fireworks at Central Park.",
             location: "Central Park",
             status: "upcoming",
-            image: "../images/hospital1.jpg" 
+            image: "../images/event6.jpg" 
         },
         {
             title: "Smart City Marathon",
@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
             description: "Join thousands of runners in this annual charity marathon across the city.",
             location: "City Stadium Start",
             status: "ongoing",
-            image: "https://placehold.co/600x400/27ae60/ffffff?text=City+Marathon"
+            image: "../images/event5.jpg"
         },
         {
             title: "Cultural Dance Night",
@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
             description: "Traditional and modern dance performances from local artists.",
             location: "City Auditorium",
             status: "past",
-            image: "https://placehold.co/600x400/8e44ad/ffffff?text=Dance+Night"
+            image: "../images/event1.jpg"
         },
         {
             title: "New Year Countdown",
@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
             description: "Grand celebration with live music, light show, and midnight fireworks.",
             location: "Riverside Promenade",
             status: "upcoming",
-            image: "https://placehold.co/600x400/f39c12/ffffff?text=New+Year+2026"
+            image: "../images/event7.jpg"
         },
         {
             title: "Road Maintenance Alert",
@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
             description: "Main Bridge closed for repairs until Dec 18. Use alternate routes.",
             location: "Main Bridge",
             status: "past",
-            image: "https://placehold.co/600x400/c0392b/ffffff?text=Road+Closed"
+            image: "../images/event2.jpeg"
         },
         {
             title: "Eco-Friendly Drive",
@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
             description: "Tree plantation and awareness campaign in multiple parks.",
             location: "Multiple Parks",
             status: "ongoing",
-            image: "https://placehold.co/600x400/16a085/ffffff?text=Eco+Drive"
+            image: "../images/event3.jpg"
         }
     ];
 

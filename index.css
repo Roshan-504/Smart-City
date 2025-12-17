@@ -20,7 +20,6 @@
 }
 
 body {
-    min-width: 412px;
     font-family: 'Segoe UI', 'Poppins', Roboto, sans-serif;
     line-height: 1.6;
     color: var(--text-main);

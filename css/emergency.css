@@ -26,7 +26,8 @@
 
 .emergency-icon {
   font-size: 1.8rem;
-  margin-right: 0.8rem;
+  align-items: center;
+  margin-right: 1rem;
 }
 
 .emergency-info {
@@ -56,7 +57,7 @@
 .call-icon {
   width: 22px;
   height: 22px;
-  fill: #fff; /* makes icon white */
+  fill: #fff; 
 }
 
 
@@ -129,9 +130,12 @@
   transform: scale(0.98);
 }
 
-@media (min-width: 768px) {
-  .page-title {
-    font-size: 2.8rem;
-  }
 
+
+@media (min-width: 768px) {
+  .emergency-cards {
+    max-width: 520px;   
+    margin: 0 auto;    
+  }
+  
 }

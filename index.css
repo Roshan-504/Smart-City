@@ -20,6 +20,7 @@
 }
 
 body {
+    min-width: 412px;
     font-family: 'Segoe UI', 'Poppins', Roboto, sans-serif;
     line-height: 1.6;
     color: var(--text-main);
@@ -66,29 +67,27 @@ ul {
 .logo {
     font-size: 1.4rem;
     font-weight: 800;
-    color: var(--primary); /* Deep Blue */
+    color: var(--primary); 
     letter-spacing: -0.5px;
 }
 
-/* --- 2. Hamburger Menu --- */
 .hamburger {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 30px;      /* Fixed width */
-    height: 24px;     /* Fixed height */
+    width: 30px;      
+    height: 24px;     
     background: transparent;
     border: none;
     cursor: pointer;
     padding: 0;
-    z-index: 1100;    /* Ensure it's above the menu */
+    z-index: 1100;    
 }
 
-/* 2. The Three Lines */
 .hamburger span {
     display: block;
     width: 100%;
-    height: 3px;      /* Thickness */
+    height: 3px;     
     background-color: #333;
     border-radius: 3px;
     transition: all 0.0s ease-in-out;
@@ -99,23 +98,20 @@ ul {
     transform: translateY(10.5px) rotate(45deg);
 }
 
-/* 4. Middle Line: Disappear */
 .hamburger.active span:nth-child(2) {
     opacity: 0;
 }
 
-/* 5. Bottom Line: Rotate -45 deg and move up to center */
 .hamburger.active span:nth-child(3) {
     transform: translateY(-10.5px) rotate(-45deg);
 }
 
-/* --- 3. Mobile Navigation (Matches Your Image) --- */
 .nav {
     position: absolute;
     top: 100%;
     left: 0;
     right: 0;
-    background-color: #f8f9fa; /* Light grey/white background */
+    background-color: #f8f9fa; 
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.3s ease-in-out;
@@ -124,7 +120,7 @@ ul {
 }
 
 .nav.active {
-    max-height: 100vh; /* Allow full expansion */
+    max-height: 100vh;
 }
 
 .nav-list {
@@ -133,23 +129,21 @@ ul {
     list-style: none;
 }
 
-/* Mobile Link Styling - Looks like list items */
 .nav-link {
     display: block;
     padding: 1rem 1.5rem;
-    color: var(--primary); /* Blue text like in image */
+    color: var(--primary);
     font-size: 1rem;
     font-weight: 600;
-    border-bottom: 1px solid #9fc9f4; /* Separator lines */
+    border-bottom: 1px solid #9fc9f4; 
     text-decoration: none;
     background-color: var(--white);
     transition: background-color 0.2s;
 }
 
-/* Active/Hover State for Mobile */
 .nav-link:hover,
 .nav-link.active {
-    background-color: #e3f2fd; /* Light blue background on touch/active */
+    background-color: #e3f2fd; 
     color: var(--primary-hover);
 }
 
@@ -160,9 +154,19 @@ ul {
 .hero {
     background: linear-gradient(135deg, #0056b3, #007bff);
     color: var(--white);
-    padding: 3rem 0 3rem;
+    padding: 2rem 0 2rem;
     text-align: center;
     margin-bottom: 2rem;
+}
+
+.page-title {
+    font-size: 1.8rem;
+    margin-bottom: 0.2rem;
+}
+
+.page-subtitle {
+    font-size: 1rem;
+    opacity: 0.95;
 }
 
 .greeting {
@@ -230,7 +234,6 @@ ul {
     padding-bottom: 2rem;
 }
 
-/* Emergency Call Banner */
 .emergency-cta {
     margin-top: 1rem;
     
@@ -275,7 +278,7 @@ ul {
 .emergency-icon {
   width: 24px;
   height: 24px;
-  fill: #fff; /* makes icon white */
+  fill: #fff; 
 }
 
 
@@ -410,13 +413,119 @@ ul {
 }
 
 .footer {
-    background-color: #343a40;
-    color: var(--white);
-    text-align: center;
-    padding: 2rem 0;
-    margin-top: auto;
-    margin-top: 0.5rem;
+  background-color: #1f2933;
+  color: #d1d5db;
+  margin-top: 1rem;
 }
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  padding: 2.5rem 0 2rem;
+}
+
+.footer-brand h3 {
+  color: #ffffff;
+  font-size: 1.4rem;
+  margin-bottom: 0.5rem;
+}
+
+.footer-brand p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  max-width: 320px;
+}
+
+.footer-links h4,
+.footer-social h4 {
+  color: #ffffff;
+  font-size: 1.1rem;
+  margin-bottom: 0.8rem;
+}
+
+.footer-links ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.footer-links li {
+  margin-bottom: 0.4rem;
+}
+
+.footer-links a {
+  color: #d1d5db;
+  font-size: 0.95rem;
+  transition: color 0.2s;
+}
+
+.footer-links a:hover {
+  color: #ffffff;
+}
+
+.social-icons {
+  display: flex;
+  gap: 0.8rem;
+}
+
+.footer-social-home {
+  display: flex;
+  gap: 1rem;
+  padding: 0.8rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.social-icons a {
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+}
+
+.social-icons a:hover {
+  background: #2563eb;
+  transform: translateY(-2px);
+}
+
+.footer-bottom {
+  border-top: 1px solid #374151;
+  text-align: center;
+  padding: 1rem 0;
+  font-size: 0.85rem;
+  color: #9ca3af;
+}
+
+@media (max-width: 767px) {
+  .footer-grid {
+    text-align: center;
+    justify-items: center;
+  }
+
+  .footer-links ul {
+    padding: 0;
+  }
+
+  .footer-links li {
+    text-align: center;
+  }
+
+  .social-icons {
+    justify-content: center;
+  }
+}
+
+
+@media (min-width: 768px) {
+  .footer-grid {
+    grid-template-columns: 2fr 1fr 1fr;
+    align-items: start;
+  }
+}
+
 
 
 
@@ -441,14 +550,13 @@ ul {
         gap: 0.5rem;
     }
 
-    /* Desktop Links - Pill Shape */
     .nav-link {
         padding: 0.5rem 0.8rem;
         border-radius: 50px;
         font-size: 0.9rem;
         border-bottom: none;
         background-color: transparent;
-        color: #555; /* Dark grey text on desktop */
+        color: #555; 
     }
 
     .nav-link:hover,
@@ -495,15 +603,13 @@ ul {
         display: flex;
     }
 
-    /* Default cards (Quick Access etc.) */
     .cards-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 
-    /* Today in NYC – content list style */
     .highlights .cards-grid {
         grid-template-columns: 1fr;
-        max-width: 820px;   /* wider than mobile, balanced for tablet */
+        max-width: 820px;   
         margin: 0 auto;
         gap: 1rem;
     }
@@ -520,10 +626,11 @@ ul {
 
 
 @media (max-width: 767px) {
-
+    .page-title {
+        font-size: 1.5rem;
+    }
    
     .hero {
-        text-align: left;
         padding: 1.5rem 1.2rem;
         margin-bottom: 1rem;
     }

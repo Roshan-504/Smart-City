@@ -6,15 +6,6 @@
     padding: 3rem 0;
 }
 
-.page-title {
-    font-size: 2.4rem;
-    margin-bottom: 0.5rem;
-}
-
-.page-subtitle {
-    font-size: 1.2rem;
-    opacity: 0.95;
-}
 
 .events-list-section {
     padding: 2rem 0 3rem;
@@ -51,15 +42,14 @@
     gap: 2rem;
 }
 
-/* --- Event Card Styling --- */
 .event-card {
     background: white;
     border-radius: 12px;
-    overflow: hidden; /* Keeps image corners rounded */
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    overflow: hidden; 
     transition: transform 0.3s, box-shadow 0.3s;
     display: flex;
     flex-direction: column;
+    border: 1px solid #e4e3e3;
 }
 
 .event-card:hover {
@@ -67,7 +57,6 @@
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
 }
 
-/* Image Section */
 .event-image {
     width: 100%;
     height: 180px;
@@ -77,10 +66,9 @@
 .event-image img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Ensures image fills area without stretching */
+    object-fit: cover;
 }
 
-/* Content Wrapper */
 .event-content-wrapper {
     padding: 1.5rem;
     display: flex;
@@ -130,7 +118,7 @@
 }
 
 .event-body {
-    margin-top: auto; /* Pushes body to bottom if card height varies */
+    margin-top: auto; 
 }
 
 .event-description {
@@ -152,11 +140,7 @@
     padding: 3rem 0;
 }
 
-/* Tablet & Desktop */
 @media (min-width: 768px) {
-    .page-title {
-        font-size: 2.8rem;
-    }
 
     .events-grid {
         grid-template-columns: repeat(2, 1fr);

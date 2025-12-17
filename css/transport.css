@@ -1,4 +1,3 @@
-/* css/transport.css */
 
 .transport-hero {
     background: linear-gradient(135deg, #0039a6, #002b7f); /* MTA Blue */
@@ -7,22 +6,6 @@
     padding: 3rem 0;
 }
 
-.page-title {
-    font-size: 2.5rem;
-    margin-bottom: 0.5rem;
-}
-
-.page-subtitle {
-    font-size: 1.2rem;
-    opacity: 0.9;
-}
-
-/* Controls */
-.transport-controls {
-    background-color: #f1f1f1;
-    padding: 1.5rem 0;
-    border-bottom: 1px solid #ddd;
-}
 
 .search-filter-wrapper {
     display: flex;
@@ -51,28 +34,22 @@
     min-width: 150px;
 }
 
-/* Routes List Container */
 .routes-list {
     padding: 2rem 0 4rem;
 }
 
-/* GRID LAYOUT LOGIC 
-   Default (Mobile): 1 Column
-*/
 .cards-grid {
     display: grid;
-    grid-template-columns: 1fr; /* Mobile: 1 Card per row */
+    grid-template-columns: 1fr; 
     gap: 1.5rem;
 }
 
-/* --- New Card Design --- */
 .route-card {
     background: white;
     padding: 1.2rem;
     border-radius: 16px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     transition: transform 0.2s, box-shadow 0.2s;
-    border: 1px solid #f0f0f0;
+    border: 1px solid #e4e3e3;
     display: flex;
     flex-direction: column;
     gap: 0.8rem;
@@ -83,7 +60,6 @@
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
 }
 
-/* Header: Title + Badge */
 .card-header {
     display: flex;
     justify-content: space-between;
@@ -100,7 +76,6 @@
     padding-right: 10px;
 }
 
-/* Badges */
 .type-badge {
     padding: 4px 12px;
     border-radius: 6px;
@@ -117,7 +92,6 @@
 .type-badge.rail { background-color: #d32f2f; }
 .type-badge.ferry { background-color: #16a085; }
 
-/* Body: Time & Path */
 .card-body {
     display: flex;
     flex-direction: column;
@@ -137,7 +111,6 @@
     opacity: 0.7;
 }
 
-/* Footer: Full Width Fare Button */
 .fare-box {
     margin-top: auto;
     padding: 12px;
@@ -159,21 +132,145 @@
 .fare-box.ferry { background-color: #FFE1D3; color: black; }
 
 
-/* --- MEDIA QUERIES --- */
 
-/* Tablet (768px and up) -> 2 Cards */
 @media (min-width: 768px) {
     .cards-grid {
         grid-template-columns: repeat(2, 1fr);
     }
     
-    .page-title { font-size: 3rem; }
     .search-filter-wrapper { flex-wrap: nowrap; }
 }
 
-/* Laptop/Desktop (1024px and up) -> 3 Cards */
 @media (min-width: 1024px) {
     .cards-grid {
         grid-template-columns: repeat(3, 1fr);
     }
+}
+
+.search-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #f2f4f8; 
+    z-index: 2000; 
+    display: flex;
+    flex-direction: column;
+    transform: translateY(100%); 
+    transition: transform 0.3s ease-in-out;
+}
+
+.search-overlay.active {
+    transform: translateY(0);
+}
+
+.search-header {
+    background: white;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.search-bar-wrapper {
+    flex-grow: 1;
+    background: #fff;
+    border: 1px solid #333; 
+    border-radius: 8px;
+    padding: 8px 12px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.search-bar-wrapper input {
+    border: none;
+    outline: none;
+    width: 100%;
+    font-size: 16px;
+    color: #333;
+}
+
+.search-icon {
+    font-size: 14px;
+    color: #333;
+}
+
+.clear-btn {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: #666;
+}
+
+.cancel-text {
+    background: none;
+    border: none;
+    font-size: 14px;
+    color: #333;
+    cursor: pointer;
+}
+
+.blue-banner {
+    background: linear-gradient(135deg, #0056b3, #007bff); 
+    color: white;
+    padding: 15px;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.recent-routes-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    background: white;
+    flex-grow: 1; 
+    overflow-y: auto;
+}
+
+.recent-routes-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    border-bottom: 1px solid #eee;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.recent-routes-list li:hover {
+    background-color: #f9f9f9;
+}
+
+.route-info {
+    font-size: 14px;
+    color: #202124;
+    font-weight: 400;
+}
+
+.blue-arrow {
+    color: #5f6368;
+    margin: 0 4px;
+    font-size: 12px;
+    padding: 2px 4px;
+    background: #e8f0fe;
+    border-radius: 4px;
+}
+
+.arrow-icon {
+    transform: rotate(-45deg); 
+}
+
+.arrow-icon {
+  display: flex;
+  align-items: center;
+}
+
+.arrow-icon svg {
+  width: 18px;       
+  height: 18px;       
+  fill: #333;         
 }

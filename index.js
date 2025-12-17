@@ -4,10 +4,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (hamburger && nav) {
     hamburger.addEventListener("click", () => {
-      // Toggle menu visibility
       nav.classList.toggle("active");
 
-      // IMPORTANT: Toggle class on hamburger to trigger CSS animation
       hamburger.classList.toggle("active");
     });
   }

@@ -5,16 +5,6 @@
     padding: 3rem 0;
 }
 
-.page-title {
-    font-size: 2.4rem;
-    margin-bottom: 0.5rem;
-}
-
-.page-subtitle {
-    font-size: 1.2rem;
-    opacity: 0.95;
-}
-
 .map-section {
     padding: 2rem 0 3rem;
 }
@@ -139,10 +129,86 @@
     font-size: 1.4rem;
 }
 
+
+.map-section {
+  padding: 2rem 0;
+}
+
+.map-container {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+}
+
+.city-map {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.fullscreen-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+
+.map-overlay {
+  position: fixed;
+  inset: 0;
+  background: #000;
+  display: none;
+  z-index: 9999;
+
+  width: 100vw;
+  height: 100dvh;        
+  overflow: auto;       
+  overscroll-behavior: contain;
+}
+
+.map-overlay img {
+  display: block;
+
+  width: auto;
+  height: auto;
+
+  min-width: 100vw;     
+  min-height: 100dvh;   
+
+  max-width: none;
+  max-height: none;
+}
+
+.close-btn {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  z-index: 10000;
+
+  background: rgba(255,255,255,0.95);
+  border: none;
+  font-size: 20px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+body.map-fullscreen header,
+body.map-fullscreen .hero,
+body.map-fullscreen footer {
+  display: none;
+}
+
+
 @media (min-width: 768px) {
-    .page-title {
-        font-size: 2.8rem;
-    }
 
     .map-container {
         max-width: 900px;

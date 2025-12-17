@@ -1,6 +1,4 @@
-/* css/feedback.css */
 
-/* Hero Section */
 .feedback-hero {
     background: linear-gradient(180deg, #1976d2 0%, #42a5f5 100%);
     color: white;
@@ -8,18 +6,8 @@
     padding: 3rem 0;
 }
 
-.page-title {
-    font-size: 1.8rem;
-    font-weight: 700;
-    margin-bottom: 0.5rem;
-}
 
-.page-subtitle {
-    font-size: 1rem;
-    opacity: 0.9;
-}
 
-/* Form Container */
 .feedback-form-section {
     padding: 2rem 0 4rem;
     background-color: #f5f5f5;
@@ -45,7 +33,6 @@ label {
 
 .required { color: #e53935; }
 
-/* Standard Inputs */
 input[type="text"],
 input[type="email"],
 textarea {
@@ -65,7 +52,6 @@ input:focus, textarea:focus {
     border-color: #1976d2;
 }
 
-/* --- CUSTOM DROPDOWN STYLING --- */
 
 .custom-select-wrapper {
     position: relative;
@@ -73,7 +59,6 @@ input:focus, textarea:focus {
     width: 100%;
 }
 
-/* The Box displayed when closed */
 .custom-select-trigger {
     position: relative;
     display: flex;
@@ -81,7 +66,7 @@ input:focus, textarea:focus {
     justify-content: space-between;
     padding: 11px 15px;
     font-size: 0.95rem;
-    color: #555; /* Gray text for placeholder */
+    color: #555; 
     background: #fff;
     border: 1px solid #ccc;
     border-radius: 8px;
@@ -89,7 +74,6 @@ input:focus, textarea:focus {
     transition: all 0.2s;
 }
 
-/* Arrow Icon */
 .custom-select-trigger .arrow {
     width: 0; 
     height: 0; 
@@ -98,19 +82,17 @@ input:focus, textarea:focus {
     border-top: 5px solid #333;
 }
 
-/* Open State Border */
 .custom-select-wrapper.open .custom-select-trigger {
     border: 1px solid #1976d2;
 }
 
-/* The Dropdown Menu (Hidden by default) */
 .custom-options {
     position: absolute;
     display: block;
     top: 100%;
     left: 0;
     right: 0;
-    background: #eef6f8; /* Light Blue background from image */
+    background: #eef6f8; 
     border: 1px solid #ccc;
     border-radius: 4px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.15);
@@ -124,7 +106,6 @@ input:focus, textarea:focus {
     overflow: hidden;
 }
 
-/* Show Menu when Open */
 .custom-select-wrapper.open .custom-options {
     opacity: 1;
     visibility: visible;
@@ -132,9 +113,8 @@ input:focus, textarea:focus {
     transform: translateY(0);
 }
 
-/* Menu Header (Pink) */
 .options-header {
-    background-color: #fff5f8; /* Light Pink background */
+    background-color: #fff5f8; 
     padding: 12px 15px;
     color: #333;
     font-weight: 500;
@@ -147,7 +127,6 @@ input:focus, textarea:focus {
 
 .up-arrow { font-size: 0.7rem; color: #555; }
 
-/* Menu Options (Blue) */
 .option {
     padding: 12px 15px;
     cursor: pointer;
@@ -157,7 +136,7 @@ input:focus, textarea:focus {
 }
 
 .option:hover {
-    background-color: #dfecef; /* Slightly darker blue on hover */
+    background-color: #dfecef; 
 }
 
 .option.selected {
@@ -165,7 +144,6 @@ input:focus, textarea:focus {
     color: #1976d2;
 }
 
-/* --- End Custom Dropdown --- */
 
 .error-message {
     display: block;

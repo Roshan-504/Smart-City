@@ -5,15 +5,6 @@
     padding: 3rem 0;
 }
 
-.page-title {
-    font-size: 2.4rem;
-    margin-bottom: 0.5rem;
-}
-
-.page-subtitle {
-    font-size: 1.2rem;
-    opacity: 0.95;
-}
 
 .safety-list {
     padding: 2rem 0 3rem;
@@ -23,7 +14,7 @@
     width: 100%;
     background-color: #fff;
     border: none;
-    border-bottom: 1px solid #eee;
+    border: 1px solid #e7e5e5;
     padding: 1.2rem 1rem;
     text-align: left;
     font-size: 1.2rem;
@@ -32,7 +23,6 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
     border-radius: 8px;
     margin-bottom: 0.8rem;
     transition: background-color 0.3s;
@@ -59,6 +49,7 @@
     overflow: hidden;
     transition: max-height 0.4s ease, padding 0.4s ease;
     border-radius: 0 0 8px 8px;
+    margin-bottom: .5rem;
 }
 
 .accordion-panel.active {
@@ -87,9 +78,7 @@
 }
 
 @media (min-width: 768px) {
-    .page-title {
-        font-size: 2.8rem;
-    }
+
 
     .accordion-btn {
         font-size: 1.3rem;

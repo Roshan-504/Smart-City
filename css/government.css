@@ -6,16 +6,6 @@
     padding: 3rem 0;
 }
 
-.page-title {
-    font-size: 2.4rem;
-    margin-bottom: 0.5rem;
-}
-
-.page-subtitle {
-    font-size: 1.2rem;
-    opacity: 0.95;
-}
-
 .government-services {
     padding: 2rem 0;
 }
@@ -39,13 +29,26 @@
     transition: all 0.3s;
 }
 
+.accordion-left {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  min-width: 0; 
+}
+
+.accordion-left .title {
+  white-space: normal;
+  word-break: break-word;
+}
+
+
 .accordion-btn:hover {
     background-color: #f5f0ff;
 }
 
 .accordion-btn .icon {
     font-size: 1.8rem;
-    margin-right: 1rem;
+    margin-right: 0.8rem;
 }
 
 .accordion-btn::after {
@@ -98,9 +101,6 @@
 }
 
 @media (min-width: 768px) {
-    .page-title {
-        font-size: 2.8rem;
-    }
 
     .accordion-btn {
         font-size: 1.25rem;
@@ -110,4 +110,19 @@
     .accordion-btn .icon {
         font-size: 2rem;
     }
+}
+
+@media (max-width: 767px) {
+  .accordion-btn {
+    align-items: flex-start;
+  }
+
+  .accordion-left {
+    align-items: center;
+  }
+
+  .accordion-left .icon {
+    margin-top: 2px;
+    margin-right: 0.5rem;
+  }
 }

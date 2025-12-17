@@ -47,4 +47,20 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     renderMarkers('all');
+
+    const openBtn = document.getElementById("openFullscreen");
+    const closeBtn = document.getElementById("closeFullscreen");
+    const overlay = document.getElementById("mapOverlay");
+
+    openBtn.addEventListener("click", () => {
+      overlay.style.display = "block";
+      document.body.classList.add("map-fullscreen");
+      document.body.style.overflow = "hidden";
+    });
+
+    closeBtn.addEventListener("click", () => {
+      overlay.style.display = "none";
+      document.body.classList.remove("map-fullscreen");
+      document.body.style.overflow = "";
+    });
 });

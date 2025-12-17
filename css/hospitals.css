@@ -1,50 +1,42 @@
 
-.hospitals-hero {
-    background: linear-gradient(135deg, #17a2b8, #138496);
-    color: white;
-    text-align: center;
-    padding: 3rem 0;
+.filter-group {
+    display: flex;
+    justify-content: center;
 }
 
-.page-title { font-size: 2.4rem; margin-bottom: 0.5rem; }
-.page-subtitle { font-size: 1.2rem; opacity: 0.95; }
-
-.hospitals-controls {
-    padding: 1.5rem 0;
-    background-color: #f1f1f1;
-}
-
-.filter-group { display: flex; justify-content: center; }
 #type-filter {
     padding: 0.9rem 1.2rem;
-    font-size: 1.1rem;
+    font-size: 1rem;
     border: 1px solid #ccc;
     border-radius: 8px;
     background-color: white;
-    min-width: 220px;
+    min-width: 250px;
+    cursor: pointer;
 }
 
-.hospitals-list { padding: 2rem 0; }
+.hospitals-list {
+    padding: 2rem 0 4rem;
+}
 
-/* New Card Style */
 .hospital-card {
     background: white;
-    border-radius: 20px;
+    border-radius: 16px;
     overflow: hidden;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     display: flex;
     flex-direction: column;
+    border: 1px solid #e8e5e5;
 }
 
 .hospital-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 16px 30px rgba(0, 0, 0, 0.18);
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
 }
 
 .card-image {
     position: relative;
-    height: 180px;
+    height: 200px;
+    width: 100%;
     overflow: hidden;
 }
 
@@ -56,70 +48,83 @@
 
 .type-badge {
     position: absolute;
-    top: 1rem;
-    left: 1rem;
-    background-color: #28a745;
+    bottom: 10px;
+    left: 10px;
+    background-color: #00c853; 
     color: white;
-    padding: 0.5rem 1rem;
-    border-radius: 30px;
-    font-size: 0.95rem;
-    font-weight: bold;
+    padding: 5px 12px;
+    border-radius: 6px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
 
 .card-content {
     padding: 1.5rem;
-    flex: 1;
+    flex: 1; 
     display: flex;
     flex-direction: column;
 }
 
 .card-content h3 {
-    font-size: 1.5rem;
-    margin: 0 0 1rem 0;
+    font-size: 1.3rem;
+    margin: 0 0 0.8rem 0;
     color: #333;
+    line-height: 1.4;
 }
 
 .info-row {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
+    gap: 10px;
     margin-bottom: 0.8rem;
-    color: #666;
-    font-size: 1rem;
+    color: #555;
+    font-size: 0.95rem;
+    line-height: 1.5;
 }
 
 .info-row .icon {
-    margin-right: 0.8rem;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
+    min-width: 20px; 
 }
 
 .call-button {
     margin-top: auto;
-    background: linear-gradient(135deg, #28a745, #20c997);
+    background-color: #00c853; 
     color: white;
     text-decoration: none;
-    padding: 1rem;
-    border-radius: 16px;
-    font-size: 1.2rem;
-    font-weight: bold;
+    padding: 12px 0;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 700;
     text-align: center;
-    box-shadow: 0 4px 10px rgba(40, 167, 69, 0.3);
-    transition: transform 0.2s;
+    display: block;
+    width: 100%;
+    transition: background-color 0.2s;
 }
 
 .call-button:hover {
-    transform: scale(1.03);
+    background-color: #009624;
 }
 
-.call-button:active {
-    transform: scale(0.98);
+
+.cards-grid {
+    display: grid;
+    grid-template-columns: 1fr; 
+    gap: 2rem;
 }
 
 @media (min-width: 768px) {
-    .page-title { font-size: 2.8rem; }
-    .cards-grid { grid-template-columns: repeat(2, 1fr); }
-    .card-image { height: 220px; }
+    .cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+    
 }
 
 @media (min-width: 1024px) {
-    .cards-grid { grid-template-columns: repeat(3, 1fr); }
+    .cards-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
 }

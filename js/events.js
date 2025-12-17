@@ -76,7 +76,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         noEventsMessage.style.display = 'none';
 
-        // Sort: Upcoming first
         filteredEvents.sort((a, b) => new Date(a.date) - new Date(b.date));
 
         filteredEvents.forEach(event => {
@@ -86,7 +85,6 @@ document.addEventListener('DOMContentLoaded', () => {
             const badgeText = event.status === 'upcoming' ? 'Upcoming' :
                               event.status === 'ongoing' ? 'Ongoing Now' : 'Past';
 
-            // Added Image div at the top
             card.innerHTML = `
                 <div class="event-image">
                     <img src="${event.image}" alt="${event.title}" loading="lazy">

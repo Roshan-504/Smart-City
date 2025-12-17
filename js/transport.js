@@ -1,7 +1,4 @@
-// js/transport.js
-
 document.addEventListener("DOMContentLoaded", () => {
-  // Updated Data with Time fields to match design
   const routesData = [
     {
       type: "subway",
@@ -45,9 +42,6 @@ document.addEventListener("DOMContentLoaded", () => {
       path: "Wall St <span class='icon'>↔️</span> Hunter Points South",
       fare: "$4.00",
     },
-
-    /* 🔹 New Routes Added Below */
-
     {
       type: "subway",
       name: "L Train",
@@ -71,29 +65,34 @@ document.addEventListener("DOMContentLoaded", () => {
     },
   ];
 
-
-  const searchInput = document.getElementById("search-input");
+  const mainContainer = document.getElementById("routes-container");
+  const mainSearchInput = document.getElementById("search-input");
   const typeFilter = document.getElementById("type-filter");
-  const container = document.getElementById("routes-container");
 
-  function renderRoutes() {
-    if (!searchInput || !typeFilter || !container) return;
+  const searchOverlay = document.getElementById("search-overlay");
+  const overlaySearchInput = document.getElementById("overlay-search-input");
+  const overlayList = document.getElementById("overlay-routes-list");
+  const closeSearchBtn = document.getElementById("close-search-btn");
+  const clearBtn = document.getElementById("clear-search");
 
-    const searchTerm = searchInput.value.toLowerCase().trim();
-    const selectedType = typeFilter.value;
+  function renderMainCards(searchTerm = "", filterType = "all") {
+    if (!mainContainer) return;
 
     const filtered = routesData.filter((route) => {
+      const cleanPath = route.path.replace(/<[^>]*>/g, "");
+      const term = searchTerm.toLowerCase().trim();
+
       const matchesSearch =
-        route.name.toLowerCase().includes(searchTerm) ||
-        route.path.toLowerCase().includes(searchTerm);
-      const matchesType = selectedType === "all" || route.type === selectedType;
+        route.name.toLowerCase().includes(term) ||
+        cleanPath.toLowerCase().includes(term);
+      const matchesType = filterType === "all" || route.type === filterType;
       return matchesSearch && matchesType;
     });
 
-    container.innerHTML = "";
+    mainContainer.innerHTML = "";
 
     if (filtered.length === 0) {
-      container.innerHTML =
+      mainContainer.innerHTML =
         '<p style="grid-column: 1 / -1; text-align: center; color: #666; padding: 2rem;">No routes found.</p>';
       return;
     }
@@ -101,34 +100,98 @@ document.addEventListener("DOMContentLoaded", () => {
     filtered.forEach((route) => {
       const card = document.createElement("div");
       card.className = "route-card";
-
-      // New HTML Structure to match the image
       card.innerHTML = `
-                <div class="card-header">
-                    <h3>${route.name}</h3>
-                    <span class="type-badge ${route.type}">${route.type}</span>
-                </div>
-                
-                <div class="card-body">
-                    <div class="info-row">
-                        <span>${route.time}</span>
-                    </div>
-                    <div class="info-row">
-                        <span>${route.path}</span>
-                    </div>
-                </div>
-
-                <div class="fare-box ${route.type}">
-                    <span class="icon">💳</span> 
-                    ${route.fare} (OMNY/Card)
-                </div>
-            `;
-      container.appendChild(card);
+        <div class="card-header">
+            <h3>${route.name}</h3>
+            <span class="type-badge ${route.type}">${route.type}</span>
+        </div>
+        <div class="card-body">
+            <div class="info-row"><span>${route.time}</span></div>
+            <div class="info-row"><span>${route.path}</span></div>
+        </div>
+        <div class="fare-box ${route.type}">
+            <span class="icon">💳</span> 
+            ${route.fare} (OMNY/Card)
+        </div>
+      `;
+      mainContainer.appendChild(card);
     });
   }
 
-  if (searchInput) searchInput.addEventListener("input", renderRoutes);
-  if (typeFilter) typeFilter.addEventListener("change", renderRoutes);
+  function renderOverlayList(searchTerm = "") {
+    if (!overlayList) return;
 
-  renderRoutes();
+    overlayList.innerHTML = "";
+    const term = searchTerm.toLowerCase().trim();
+
+    const filtered = routesData.filter((route) => {
+      const cleanPath = route.path.replace(/<[^>]*>/g, "");
+      return (
+        route.name.toLowerCase().includes(term) ||
+        cleanPath.toLowerCase().includes(term)
+      );
+    });
+
+    filtered.forEach((route) => {
+      const li = document.createElement("li");
+
+      
+      const displayPath = route.path
+
+      li.innerHTML = `
+        <div class="route-info">
+            <span class="route-text">${displayPath}</span>
+        </div>
+        <span class="arrow-icon"><svg xmlns="http://www.w3.org/2000/svg" shape-rendering="geometricPrecision" text-rendering="geometricPrecision" image-rendering="optimizeQuality" fill-rule="evenodd" clip-rule="evenodd" viewBox="0 0 512 404.39"><path fill-rule="nonzero" d="M438.95 219.45 0 219.99v-34.98l443.3-.55L269.8 25.79 293.39 0 512 199.92 288.88 404.39l-23.59-25.8z"/></svg></span>
+      `;
+
+      li.addEventListener("click", () => {
+        if (mainSearchInput) mainSearchInput.value = route.name;
+        renderMainCards(route.name, "all");
+        searchOverlay.classList.remove("active");
+      });
+
+      overlayList.appendChild(li);
+    });
+  }
+
+
+  renderMainCards();
+  renderOverlayList(); 
+
+  if (typeFilter) {
+    typeFilter.addEventListener("change", () => {
+      renderMainCards(mainSearchInput.value, typeFilter.value);
+    });
+  }
+
+  if (mainSearchInput) {
+    mainSearchInput.addEventListener("click", (e) => {
+      e.preventDefault();
+      searchOverlay.classList.add("active");
+      overlaySearchInput.value = "";
+      overlaySearchInput.focus();
+      renderOverlayList(); 
+    });
+  }
+
+  if (closeSearchBtn) {
+    closeSearchBtn.addEventListener("click", () => {
+      searchOverlay.classList.remove("active");
+    });
+  }
+
+  if (overlaySearchInput) {
+    overlaySearchInput.addEventListener("input", (e) => {
+      renderOverlayList(e.target.value);
+    });
+  }
+
+  if (clearBtn) {
+    clearBtn.addEventListener("click", () => {
+      overlaySearchInput.value = "";
+      overlaySearchInput.focus();
+      renderOverlayList("");
+    });
+  }
 });

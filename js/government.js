@@ -80,9 +80,12 @@ document.addEventListener('DOMContentLoaded', () => {
         button.className = 'accordion-btn';
         button.setAttribute('aria-expanded', 'false');
         button.innerHTML = `
+        <div class="accordion-left">
             <span class="icon">${service.icon}</span>
-            <span>${service.title}</span>
+            <span class="title">${service.title}</span>
+        </div>
         `;
+
 
         const panel = document.createElement('div');
         panel.className = 'accordion-panel';

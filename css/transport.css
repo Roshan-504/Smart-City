@@ -1,3 +1,4 @@
+/* css/transport.css */
 
 .transport-hero {
     background: linear-gradient(135deg, #0039a6, #002b7f); /* MTA Blue */
@@ -16,6 +17,7 @@
     opacity: 0.9;
 }
 
+/* Controls */
 .transport-controls {
     background-color: #f1f1f1;
     padding: 1.5rem 0;
@@ -49,65 +51,129 @@
     min-width: 150px;
 }
 
+/* Routes List Container */
 .routes-list {
     padding: 2rem 0 4rem;
 }
 
+/* GRID LAYOUT LOGIC 
+   Default (Mobile): 1 Column
+*/
+.cards-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* Mobile: 1 Card per row */
+    gap: 1.5rem;
+}
+
+/* --- New Card Design --- */
 .route-card {
     background: white;
-    padding: 1.5rem;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    padding: 1.2rem;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     transition: transform 0.2s, box-shadow 0.2s;
-    border: 1px solid #eee;
-    position: relative;
-    overflow: hidden;
+    border: 1px solid #f0f0f0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
 }
 
 .route-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
 }
 
-.route-card h3 {
-    margin: 0.8rem 0 0.5rem;
-    font-size: 1.4rem;
-    color: #333;
+/* Header: Title + Badge */
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 0.5rem;
 }
 
-.route-path {
-    color: #666;
-    font-size: 0.95rem;
-    margin-bottom: 1rem;
-    line-height: 1.4;
+.card-header h3 {
+    font-size: 1.2rem;
+    color: #222;
+    margin: 0;
+    font-weight: 700;
+    flex: 1;
+    padding-right: 10px;
 }
 
-.fare {
-    font-weight: 600;
-    color: #0039a6;
-    background-color: #e3f2fd;
-    display: inline-block;
-    padding: 5px 10px;
-    border-radius: 4px;
-    font-size: 0.9rem;
-}
-
+/* Badges */
 .type-badge {
-    display: inline-block;
-    padding: 4px 10px;
-    border-radius: 50px;
-    font-size: 0.8rem;
-    font-weight: bold;
+    padding: 4px 12px;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: 700;
     text-transform: uppercase;
     color: white;
+    letter-spacing: 0.5px;
+    flex-shrink: 0;
 }
 
-.type-badge.subway { background-color: #f39c12; } 
-.type-badge.bus { background-color: #0039a6; }    
-.type-badge.rail { background-color: #c0392b; }   
-.type-badge.ferry { background-color: #16a085; }  
+.type-badge.subway { background-color: #ff6b35; }
+.type-badge.bus { background-color: #0056b3; }
+.type-badge.rail { background-color: #d32f2f; }
+.type-badge.ferry { background-color: #16a085; }
 
+/* Body: Time & Path */
+.card-body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.info-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.95rem;
+    color: #444;
+}
+
+.info-row i, .info-row span.icon {
+    font-size: 1rem;
+    opacity: 0.7;
+}
+
+/* Footer: Full Width Fare Button */
+.fare-box {
+    margin-top: auto;
+    padding: 12px;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: 600;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+}
+
+
+.fare-box.subway { background-color: #FFE1D3; color: black; }
+.fare-box.bus { background-color: #FFE1D3; color: black; }
+.fare-box.rail { background-color: #FFE1D3; color: black; }
+.fare-box.ferry { background-color: #FFE1D3; color: black; }
+
+
+/* --- MEDIA QUERIES --- */
+
+/* Tablet (768px and up) -> 2 Cards */
 @media (min-width: 768px) {
+    .cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
     .page-title { font-size: 3rem; }
     .search-filter-wrapper { flex-wrap: nowrap; }
+}
+
+/* Laptop/Desktop (1024px and up) -> 3 Cards */
+@media (min-width: 1024px) {
+    .cards-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
 }

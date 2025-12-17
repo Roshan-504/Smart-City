@@ -1,109 +1,137 @@
-
 .emergency-hero {
-    background: linear-gradient(135deg, #dc3545, #c82333);
-    color: white;
-    text-align: center;
-    padding: 3rem 0;
+  background: linear-gradient(135deg, #0056b3, #007bff);
+  color: #fff;
+  text-align: center;
+  padding: 1.8rem 0;
+  margin-bottom: 1rem;
 }
 
-.page-title {
-    font-size: 2.4rem;
-    margin-bottom: 0.5rem;
+.emergency-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  padding: 1.2rem 0;
 }
 
-.page-subtitle {
-    font-size: 1.2rem;
-    opacity: 0.95;
+.emergency-item {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  border-radius: 10px;
+  padding: 0.9rem 1rem;
+  text-decoration: none;
+  color: #222;
+  border: 0.1px solid #ddd;
 }
 
-.emergency-list {
-    padding: 2rem 0;
+.emergency-icon {
+  font-size: 1.8rem;
+  margin-right: 0.8rem;
 }
+
+.emergency-info {
+  flex: 1;
+}
+
+.emergency-info h4 {
+  font-size: 1rem;
+  margin-bottom: 2px;
+}
+
+.emergency-info p {
+  font-size: 0.85rem;
+  color: #666;
+}
+
+.call-btn {
+  background: #dc3545;
+  width: 42px;
+  height: 42px;
+  border-radius: 7px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.call-icon {
+  width: 22px;
+  height: 22px;
+  fill: #fff; /* makes icon white */
+}
+
 
 .accordion-btn {
-    width: 100%;
-    background-color: #fff;
-    border: none;
-    border-bottom: 1px solid #eee;
-    padding: 1.2rem 1rem;
-    text-align: left;
-    font-size: 1.1rem;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-    border-radius: 8px;
-    margin-bottom: 0.8rem;
-    transition: background-color 0.3s;
+  width: 100%;
+  background-color: #fff;
+  border: none;
+  border-bottom: 1px solid #eee;
+  padding: 1.2rem 1rem;
+  text-align: left;
+  font-size: 1.1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
+  margin-bottom: 0.8rem;
+  transition: background-color 0.3s;
 }
 
 .accordion-btn:hover {
-    background-color: #f1f1f1;
+  background-color: #f1f1f1;
 }
 
 .accordion-btn .icon {
-    font-size: 1.8rem;
-    margin-right: 1rem;
+  font-size: 1.8rem;
+  margin-right: 1rem;
 }
 
 .accordion-btn .number {
-    font-weight: bold;
-    color: #dc3545;
-    font-size: 1.3rem;
+  font-weight: bold;
+  color: #dc3545;
+  font-size: 1.3rem;
 }
 
 .accordion-panel {
-    background-color: #f9f9f9;
-    padding: 0 1rem;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.4s ease, padding 0.4s ease;
-    border-radius: 0 0 8px 8px;
+  background-color: #f9f9f9;
+  padding: 0 1rem;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, padding 0.4s ease;
+  border-radius: 0 0 8px 8px;
 }
 
 .accordion-panel.active {
-    max-height: 200px; 
-    padding: 1.2rem 1rem;
+  max-height: 200px;
+  padding: 1.2rem 1rem;
 }
 
 .call-button {
-    display: inline-block;
-    background-color: #dc3545;
-    color: white;
-    text-decoration: none;
-    padding: 0.8rem 1.5rem;
-    border-radius: 50px;
-    font-weight: bold;
-    font-size: 1.1rem;
-    margin-top: 0.8rem;
-    box-shadow: 0 4px 10px rgba(220, 53, 69, 0.3);
-    transition: transform 0.2s;
+  display: inline-block;
+  background-color: #dc3545;
+  color: white;
+  text-decoration: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 50px;
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-top: 0.8rem;
+  box-shadow: 0 4px 10px rgba(220, 53, 69, 0.3);
+  transition: transform 0.2s;
 }
 
 .call-button:hover {
-    transform: scale(1.05);
+  transform: scale(1.05);
 }
 
 .call-button:active {
-    transform: scale(0.98);
+  transform: scale(0.98);
 }
 
 @media (min-width: 768px) {
-    .page-title {
-        font-size: 2.8rem;
-    }
+  .page-title {
+    font-size: 2.8rem;
+  }
 
-    .accordion-btn {
-        font-size: 1.2rem;
-        padding: 1.5rem;
-    }
-
-    .accordion-btn .icon {
-        font-size: 2rem;
-    }
-
-    .accordion-btn .number {
-        font-size: 1.5rem;
-    }
 }

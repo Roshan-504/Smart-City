@@ -4,38 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Feedback & Help - NYC City Guide</title>
-    <meta name="description" content="Share your feedback, report issues, or get help with city services.">
     <link rel="stylesheet" href="../index.css">
     <link rel="stylesheet" href="../css/feedback.css">
 </head>
 <body>
     <header class="header">
-        <div class="container header-container">
-            <h1 class="logo">NYC City Guide</h1>
-            <button class="hamburger" aria-label="Open navigation menu" aria-expanded="false">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            <nav class="nav" aria-label="Main navigation">
-                <ul class="nav-list">
-                    <li><a href="../index.html" class="nav-link">Home</a></li>
-                    <li><a href="emergency.html" class="nav-link">Emergency</a></li>
-                    <li><a href="transport.html" class="nav-link">Transport</a></li>
-                    <li><a href="hospitals.html" class="nav-link">Hospitals</a></li>
-                    <li><a href="government.html" class="nav-link">Government</a></li>
-                    <li><a href="map.html" class="nav-link">City Map</a></li>
-                    <li><a href="tourist.html" class="nav-link">Tourist Spots</a></li>
-                    <li><a href="safety.html" class="nav-link">Safety Tips</a></li>
-                    <li><a href="events.html" class="nav-link">Events</a></li>
-                    <li><a href="feedback.html" class="nav-link active">Feedback</a></li>
-                </ul>
-            </nav>
-        </div>
+      <div class="container header-container">
+        <h1 class="logo">NYC City Guide</h1>
+        <button
+          class="hamburger"
+          aria-label="Open navigation menu"
+          aria-expanded="false"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <nav class="nav" aria-label="Main navigation">
+          <ul class="nav-list">
+            <li><a href="../index.html" class="nav-link">Home</a></li>
+            <li>
+              <a href="emergency.html" class="nav-link">Emergency</a>
+            </li>
+            <li><a href="transport.html" class="nav-link">Transport</a></li>
+            <li><a href="hospitals.html" class="nav-link">Hospitals</a></li>
+            <li><a href="government.html" class="nav-link">Government</a></li>
+            <li><a href="map.html" class="nav-link">City Map</a></li>
+            <li><a href="tourist.html" class="nav-link">Tourist Spots</a></li>
+            <li><a href="safety.html" class="nav-link">Safety Tips</a></li>
+            <li><a href="events.html" class="nav-link">Events</a></li>
+            <li><a href="feedback.html" class="nav-link active">Feedback</a></li>
+          </ul>
+        </nav>
+      </div>
     </header>
 
     <main class="main-content">
-        <section class="feedback-hero">
+        <section class="hero">
             <div class="container">
                 <h2 class="page-title">Feedback & Help</h2>
                 <p class="page-subtitle">We value your opinion! Help us improve city services.</p>
@@ -45,42 +50,54 @@
         <section class="feedback-form-section">
             <div class="container">
                 <form id="feedback-form" novalidate>
+                    
                     <div class="form-group">
                         <label for="name">Your Name <span class="required">*</span></label>
-                        <input type="text" id="name" name="name" required aria-required="true">
+                        <input type="text" id="name" name="name" placeholder="Enter Your Name" required>
                         <span class="error-message"></span>
                     </div>
 
                     <div class="form-group">
                         <label for="email">Email Address <span class="required">*</span></label>
-                        <input type="email" id="email" name="email" required aria-required="true">
+                        <input type="email" id="email" name="email" placeholder="Enter You Email" required>
                         <span class="error-message"></span>
                     </div>
 
                     <div class="form-group">
-                        <label for="subject">Subject</label>
-                        <select id="subject" name="subject">
-                            <option value="">Select an option</option>
-                            <option value="general">General Feedback</option>
-                            <option value="bug">Report a Problem</option>
-                            <option value="suggestion">Suggestion</option>
-                            <option value="complaint">Complaint</option>
-                            <option value="appreciation">Appreciation</option>
-                        </select>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="message">Message <span class="required">*</span></label>
-                        <textarea id="message" name="message" rows="6" required aria-required="true"></textarea>
+                        <label>Subject</label>
+                        <div class="custom-select-wrapper" id="subject-wrapper">
+                            <input type="hidden" id="subject" name="subject" required>
+                            
+                            <div class="custom-select-trigger">
+                                <span id="subject-text">Subject Type</span>
+                                <div class="arrow"></div>
+                            </div>
+                            
+                            <div class="custom-options">
+                                <div class="option" data-value="general">General Feedback</div>
+                                <div class="option" data-value="bug">Report a Problem</div>
+                                <div class="option" data-value="suggestion">Suggestion</div>
+                                <div class="option" data-value="complaint">Complaint</div>
+                                <div class="option" data-value="appreciation">Appreciation</div>
+                            </div>
+                        </div>
                         <span class="error-message"></span>
                     </div>
 
-                    <button type="submit" class="submit-btn">Submit Feedback</button>
+                    
+
+                    <div class="form-group">
+                        <label for="message">Message/suggation <span class="required">*</span></label>
+                        <textarea id="message" name="message" rows="4" placeholder="Enter You Name" required></textarea>
+                        <span class="error-message"></span>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Submit</button>
                 </form>
 
-                <div id="success-message" class="success-message" role="alert" aria-live="polite">
+                <div id="success-message" class="success-message">
                     <h3>Thank You! 🎉</h3>
-                    <p>Your feedback has been submitted successfully. We appreciate your time and will review it soon.</p>
+                    <p>Your feedback has been submitted successfully.</p>
                 </div>
             </div>
         </section>
@@ -88,11 +105,11 @@
 
     <footer class="footer">
         <div class="container">
-            <p>&copy; 2025 NYC City Guide. All rights reserved.</p>
+            <p>&copy; 2025 NYC City Guide.</p>
         </div>
     </footer>
 
     <script src="../index.js"></script>
-    <script src="js/feedback.js"></script>
+    <script src="../js/feedback.js"></script>
 </body>
 </html>

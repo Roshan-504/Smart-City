@@ -1,56 +1,106 @@
+// js/feedback.js
 
-document.addEventListener('DOMContentLoaded', () => {
-    const form = document.getElementById('feedback-form');
-    const successMessage = document.getElementById('success-message');
+document.addEventListener("DOMContentLoaded", () => {
+  const form = document.getElementById("feedback-form");
+  const successMessage = document.getElementById("success-message");
+  const inputs = form.querySelectorAll("input[required], textarea[required]");
 
-    const inputs = form.querySelectorAll('input[required], textarea[required]');
-    inputs.forEach(input => {
-        input.addEventListener('blur', validateField);
-        input.addEventListener('input', clearError);
+  // Custom Dropdown Logic
+  const subjectWrapper = document.getElementById("subject-wrapper");
+  const subjectTrigger = subjectWrapper.querySelector(".custom-select-trigger");
+  const subjectText = document.getElementById("subject-text");
+  const subjectInput = document.getElementById("subject");
+  const options = subjectWrapper.querySelectorAll(".option");
+
+  // 1. Toggle Dropdown
+  subjectTrigger.addEventListener("click", () => {
+    subjectWrapper.classList.toggle("open");
+  });
+
+  // 2. Select Option
+  options.forEach((option) => {
+    option.addEventListener("click", () => {
+      const value = option.getAttribute("data-value");
+      const text = option.textContent;
+
+      // Update UI
+      subjectText.textContent = text;
+      subjectText.style.color = "#333"; // Make text darker (not placeholder gray)
+
+      // Update Hidden Input
+      subjectInput.value = value;
+
+      // Close Dropdown
+      subjectWrapper.classList.remove("open");
+
+      // Clear Error
+      const errorSpan =
+        subjectWrapper.parentElement.querySelector(".error-message");
+      errorSpan.textContent = "";
+      subjectTrigger.style.borderColor = "#ccc";
     });
+  });
 
-    function validateField(e) {
-        const field = e.target;
-        const errorSpan = field.parentElement.querySelector('.error-message');
+  // 3. Close when clicking outside
+  document.addEventListener("click", (e) => {
+    if (!subjectWrapper.contains(e.target)) {
+      subjectWrapper.classList.remove("open");
+    }
+  });
 
-        if (!field.validity.valid) {
-            if (field.validity.valueMissing) {
-                errorSpan.textContent = 'This field is required.';
-            } else if (field.validity.typeMismatch && field.type === 'email') {
-                errorSpan.textContent = 'Please enter a valid email address.';
-            } else {
-                errorSpan.textContent = 'Please fill this field correctly.';
-            }
+  // 4. Form Validation & Submission
+  form.addEventListener("submit", (e) => {
+    e.preventDefault();
+    let isValid = true;
+
+    // Check text inputs
+    inputs.forEach((input) => {
+      const errorSpan = input.parentElement.querySelector(".error-message");
+
+      if (!input.value.trim()) {
+        isValid = false;
+        errorSpan.textContent = "This field is required";
+        if (input.classList.contains("custom-select-wrapper")) {
+          // special handling if we were validating the wrapper directly
         } else {
-            errorSpan.textContent = '';
+          input.style.borderColor = "#e53935";
         }
-    }
-
-    function clearError(e) {
-        const errorSpan = e.target.parentElement.querySelector('.error-message');
-        errorSpan.textContent = '';
-    }
-
-   
-    form.addEventListener('submit', (e) => {
-        e.preventDefault(); 
-
-        let isValid = true;
-
-        inputs.forEach(input => {
-            if (!input.validity.valid) {
-                isValid = false;
-                validateField({ target: input });
-            }
-        });
-
-        if (isValid) {
-            form.style.display = 'none';
-            successMessage.classList.add('show');
-
-            setTimeout(() => {
-                form.reset();
-            }, 1000);
-        }
+      } else {
+        errorSpan.textContent = "";
+        input.style.borderColor = "#ccc";
+      }
     });
+
+    // Check Custom Dropdown
+    const dropdownError =
+      subjectWrapper.parentElement.querySelector(".error-message");
+    if (!subjectInput.value) {
+      isValid = false;
+      dropdownError.textContent = "Please select a subject";
+      subjectTrigger.style.borderColor = "#e53935";
+    } else {
+      dropdownError.textContent = "";
+      subjectTrigger.style.borderColor = "#ccc";
+    }
+
+    if (isValid) {
+      const submitBtn = form.querySelector(".submit-btn");
+      submitBtn.textContent = "Submitting...";
+      submitBtn.disabled = true;
+
+      setTimeout(() => {
+        form.style.display = "none";
+        successMessage.classList.add("show");
+      }, 1000);
+    }
+  });
+
+  // Clear errors on typing
+  inputs.forEach((input) => {
+    input.addEventListener("input", () => {
+      const errorSpan = input.parentElement.querySelector(".error-message");
+      if (errorSpan) errorSpan.textContent = "";
+      input.style.borderColor = "#ccc";
+    });
+  });
 });

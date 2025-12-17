@@ -30,17 +30,17 @@ document.addEventListener("DOMContentLoaded", () => {
     {
       title: "Upcoming Event",
       content: "Annual City Festival at Central Park – December 20–22, 2025",
-      image: "https://images.unsplash.com/photo-1492684223066-81342ee5ff30",
+      image: "./images/upcoming-events.jpg",
     },
     {
       title: "Road Alert",
       content: "Main Street partial closure due to maintenance until Dec 18.",
-      image: "https://images.unsplash.com/photo-1506521781263-d8422e82f27a",
+      image: "./images/road-alerts.jpg",
     },
     {
       title: "New Service",
       content: "Online utility bill payment portal now live!",
-      image: "https://images.unsplash.com/photo-1506521781263-d8422e82f27a",
+      image: "./images/new-service.jpg",
     },
   ];
 

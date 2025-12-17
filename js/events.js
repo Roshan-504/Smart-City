@@ -87,11 +87,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
             card.innerHTML = `
                 <div class="event-image">
-                    <img src="${event.image}" alt="${event.title}" loading="lazy">
+                    <img src="${event.image}" alt="${
+              event.title
+            }" loading="lazy">
+                    <span class="event-badge ${
+                      event.status
+                    }">${badgeText}</span>
                 </div>
                 <div class="event-content-wrapper">
                     <div class="event-header">
-                        <span class="event-badge ${event.status}">${badgeText}</span>
                         <h3 class="event-title">${event.title}</h3>
                         <p class="event-date">📅 ${formatDate(event.date)}</p>
                     </div>

@@ -346,20 +346,20 @@ ul {
 
 
 .action-card.map {
-    background-image: url("https://images.unsplash.com/photo-1548345680-f5475ea5df84");
+    background-image: url("./images/home-map.jpg");
 } 
 
 .action-card.transport {
-    background-image: url("https://images.unsplash.com/photo-1544620347-c4fd4a3d5957");
+    background-image: url("./images/home-transport.jpg");
 }
 
 .action-card.hospital {
-    background-image: url("https://images.unsplash.com/photo-1586773860418-d37222d8fce3");
+    background-image: url("./images/home-goverment.jpg");
 }
 
 
 .action-card.government {
-    background-image: url("https://images.unsplash.com/photo-1551836022-deb4988cc6c0");
+    background-image: url("./images/home-hospital.jpg");
 }
 
 .action-card p {

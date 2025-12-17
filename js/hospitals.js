@@ -2,51 +2,60 @@
 document.addEventListener('DOMContentLoaded', () => {
 
     const hospitalsData = [
-        {
-            name: 'NewYork-Presbyterian Hospital',
-            type: 'government',
-            address: '525 E 68th St, New York, NY 10065',
-            phone: 'tel:+12127465454',
-            phoneDisplay: '(212) 746-5454',
-            image: '../images/hospital1.jpg',
-            emergency: true
-        },
-        {
-            name: 'Mount Sinai Hospital',
-            type: 'private',
-            address: '1 Gustave L. Levy Pl, New York, NY 10029',
-            phone: 'tel:+12122416500',
-            phoneDisplay: '(212) 241-6500',
-            image: '../images/hospital2.webp',
-            emergency: true
-        },
-        {
-            name: 'NYU Langone Health',
-            type: 'private',
-            address: '550 1st Ave, New York, NY 10016',
-            phone: 'tel:+12122634000',
-            phoneDisplay: '(212) 263-4000',
-            image: '../images/hospital3.jpg',
-            emergency: true
-        },
-        {
-            name: 'Bellevue Hospital Center',
-            type: 'government',
-            address: '462 1st Ave, New York, NY 10016',
-            phone: 'tel:+12125622500',
-            phoneDisplay: '(212) 562-2500',
-            image: '../images/hospital4.jpg',
-            emergency: true
-        },
-        {
-            name: 'CityMD Urgent Care',
-            type: 'clinic',
-            address: '145 W 86th St, New York, NY 10024',
-            phone: 'tel:+12123624950',
-            phoneDisplay: '(212) 362-4950',
-            image: '../images/hospital5.webp',
-            emergency: false
-        }
+      {
+        name: "NewYork-Presbyterian Hospital",
+        type: "government",
+        address: "525 E 68th St, New York, NY 10065",
+        phone: "tel:+12127465454",
+        phoneDisplay: "(212) 746-5454",
+        image: "../images/hospital1.jpg",
+        emergency: true,
+      },
+      {
+        name: "Mount Sinai Hospital",
+        type: "private",
+        address: "1 Gustave L. Levy Pl, New York, NY 10029",
+        phone: "tel:+12122416500",
+        phoneDisplay: "(212) 241-6500",
+        image: "../images/hospital2.webp",
+        emergency: false,
+      },
+      {
+        name: "NYU Langone Health",
+        type: "private",
+        address: "550 1st Ave, New York, NY 10016",
+        phone: "tel:+12122634000",
+        phoneDisplay: "(212) 263-4000",
+        image: "../images/hospital3.jpg",
+        emergency: true,
+      },
+      {
+        name: "Bellevue Hospital Center",
+        type: "government",
+        address: "462 1st Ave, New York, NY 10016",
+        phone: "tel:+12125622500",
+        phoneDisplay: "(212) 562-2500",
+        image: "../images/hospital4.jpg",
+        emergency: true,
+      },
+      {
+        name: "CityMD Urgent Care",
+        type: "clinic",
+        address: "145 W 86th St, New York, NY 10024",
+        phone: "tel:+12123624950",
+        phoneDisplay: "(212) 362-4950",
+        image: "../images/hospital5.webp",
+        emergency: false,
+      },
+      {
+        name: "Lenox Hill Hospital",
+        type: "private",
+        address: "100 E 77th St, New York, NY 10075",
+        phone: "tel:+12124347500",
+        phoneDisplay: "(212) 434-7500",
+        image: "../images/hospital6.jpg",
+        emergency: true,
+      },
     ];
 
     const typeFilter = document.getElementById('type-filter');

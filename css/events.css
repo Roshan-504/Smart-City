@@ -32,7 +32,7 @@
 
 .filter-btn.active,
 .filter-btn:hover {
-    background-color: #6f42c1;
+    background-color: #0056B3;
     color: white;
 }
 
@@ -129,8 +129,8 @@
 
 .event-location {
     font-size: 0.95rem;
-    color: #6f42c1;
-    font-weight: 600;
+    color: black;
+    font-weight: 400;
 }
 
 .no-events-message {

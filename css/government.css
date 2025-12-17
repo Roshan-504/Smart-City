@@ -25,7 +25,8 @@
     justify-content: space-between;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
     border-radius: 10px;
-    margin-bottom: 1rem;
+    margin-top: 1rem;
+    margin-bottom: 0.3rem;
     transition: all 0.3s;
 }
 
@@ -43,7 +44,7 @@
 
 
 .accordion-btn:hover {
-    background-color: #f5f0ff;
+    background-color: #f2f5f9;
 }
 
 .accordion-btn .icon {
@@ -62,12 +63,13 @@
 }
 
 .accordion-panel {
-    background-color: #f9f5ff;
+    background-color: #fafafa;
     padding: 0 1rem;
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.4s ease, padding 0.4s ease;
-    border-radius: 0 0 10px 10px;
+    border-radius: 5px 5px 10px 10px;
+    margin-bottom: 1rem;
 }
 
 .accordion-panel.active {
@@ -81,12 +83,12 @@
 }
 
 .service-info strong {
-    color: #6f42c1;
+    color: black;
 }
 
 .external-link {
     display: inline-block;
-    background-color: #6f42c1;
+    background-color: #FF6319;
     color: white;
     text-decoration: none;
     padding: 0.7rem 1.2rem;

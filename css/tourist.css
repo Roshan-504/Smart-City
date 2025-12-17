@@ -41,7 +41,7 @@
 .spot-title {
     font-size: 1.4rem;
     margin-bottom: 0.8rem;
-    color: #20c997;
+    color: black;
 }
 
 .spot-description {
@@ -67,7 +67,7 @@
 .read-more {
     background: none;
     border: none;
-    color: #20c997;
+    color: #FF6319;
     font-weight: 600;
     cursor: pointer;
     padding: 0;

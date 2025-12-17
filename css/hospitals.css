@@ -48,12 +48,12 @@
 
 .type-badge {
     position: absolute;
-    bottom: 10px;
+    top: 10px;
     left: 10px;
     background-color: #00c853; 
     color: white;
     padding: 5px 12px;
-    border-radius: 6px;
+    border-radius: 12px;
     font-size: 0.85rem;
     font-weight: 600;
     box-shadow: 0 2px 5px rgba(0,0,0,0.2);
@@ -89,22 +89,32 @@
 }
 
 .call-button {
-    margin-top: auto;
-    background-color: #00c853; 
-    color: white;
-    text-decoration: none;
-    padding: 12px 0;
-    border-radius: 8px;
-    font-size: 1rem;
-    font-weight: 700;
-    text-align: center;
-    display: block;
-    width: 100%;
-    transition: background-color 0.2s;
+  margin-top: auto;
+  background-color: #00c853;
+  color: white;
+  text-decoration: none;
+  padding: 12px 0;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 700;
+
+  display: flex;                
+  align-items: center;         
+  justify-content: center;      
+  gap: 8px;                     
+  width: 100%;
+  transition: background-color 0.2s;
 }
 
 .call-button:hover {
-    background-color: #009624;
+  background-color: #00b44a;
+}
+
+.call-icon {
+  width: 20px;
+  height: 20px;
+  fill: #fff;
+  flex-shrink: 0;   
 }
 
 

@@ -67,7 +67,7 @@ ul {
 .logo {
     font-size: 1.4rem;
     font-weight: 800;
-    color: var(--primary); 
+    color: #0056B3; 
     letter-spacing: -0.5px;
 }
 
@@ -413,7 +413,7 @@ ul {
 }
 
 .footer {
-  background-color: #1f2933;
+  background-color: #383838;
   color: #d1d5db;
   margin-top: 1rem;
 }
